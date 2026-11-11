@@ -2863,3 +2863,29 @@ body.acom-branco .cartaz.revelar { transform: translateY(70px) rotateX(10deg) sc
 .inicio .cena-3 .destaque { text-align: center; }
 @media (max-width: 760px) { .inicio .barra-cine { align-items: center; text-align: center; } }
 .inicio .cine.andou .cine-dica { opacity: 0 !important; }
+
+/* ══ Nossa história: card do anfitrião abaixo de "Mais rentabilidade", compacto ══ */
+.inicio .historia-grade { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+.inicio .historia-texto .anfitriao-card { margin: 34px auto 0; max-width: 340px; padding: 18px 20px 16px; border-radius: 20px; }
+.inicio .historia-texto .anfitriao-id { padding: 0; }
+.inicio .historia-texto .avatar { width: 72px; height: 72px; margin-bottom: 8px; }
+.inicio .historia-texto .avatar-selo { width: 24px; height: 24px; }
+.inicio .historia-texto .avatar-selo svg { width: 12px; height: 12px; }
+.inicio .historia-texto .anfitriao-nome { font-size: 20px; }
+.inicio .historia-texto .anfitriao-papel { font-size: 12px; }
+.inicio .historia-texto .anfitriao-dados li { padding: 7px 0; }
+.inicio .historia-texto .anfitriao-dados strong { font-size: 14px; }
+.inicio .historia-texto .anfitriao-dados span { font-size: 10.5px; }
+.inicio .historia-texto .anfitriao-botao { margin-top: 14px; padding: 10px 14px; font-size: 13.5px; }
+@media (max-width: 760px) { .inicio .historia-texto .anfitriao-card { max-width: 300px; } }
+@media (max-width: 760px) {
+  .inicio .historia-texto .anfitriao-card { max-width: 280px; padding: 14px 16px 12px; }
+  .inicio .historia-texto .avatar { width: 58px !important; height: 58px !important; margin-bottom: 6px; }
+  .inicio .historia-texto .avatar-selo { width: 20px; height: 20px; right: -4px; bottom: 0; }
+  .inicio .historia-texto .anfitriao-nome { font-size: 17px !important; }
+  .inicio .historia-texto .anfitriao-papel { font-size: 11px !important; }
+  .inicio .historia-texto .anfitriao-dados li { padding: 5px 0; }
+  .inicio .historia-texto .anfitriao-dados strong { font-size: 12.5px !important; }
+  .inicio .historia-texto .anfitriao-dados span { font-size: 10px !important; }
+  .inicio .historia-texto .anfitriao-botao { margin-top: 10px; padding: 9px 12px; font-size: 12.5px; }
+}

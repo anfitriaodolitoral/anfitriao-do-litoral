@@ -67,3 +67,50 @@
     addEventListener("pageshow", () => raiz.classList.remove("saindo"));
   }
 })();
+
+/* ── Rodapé interativo e carrossel de "Outras acomodações" no celular (todas as páginas) ── */
+(() => {
+  const painel = document.querySelector(".rodape-painel");
+  if (painel) {
+    const naInicial = !!document.querySelector(".inicio");
+    const base = naInicial ? "" : "index.html";
+    const links = document.createElement("nav");
+    links.className = "rod-links";
+    links.setAttribute("aria-label", "Links do rodapé");
+    const itens = [["#historia", "Nossa história"], ["#servicos", "Nossa gestão"], ["#perguntas", "Dúvidas"], ["#contato", "Seja parceiro"]];
+    links.innerHTML = itens.map(([h, t]) => '<a href="' + base + h + '">' + t + "</a>").join("") +
+      '<a href="acomodacoes.html">Acomodações</a><a href="https://wa.me/5548991451520" target="_blank" rel="noopener">WhatsApp</a>';
+    painel.appendChild(links);
+    const topo = document.createElement("button");
+    topo.type = "button";
+    topo.className = "rod-topo";
+    topo.setAttribute("aria-label", "Voltar ao topo");
+    topo.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+    topo.addEventListener("click", () => (window.__lenis ? window.__lenis.scrollTo(0) : scrollTo({ top: 0, behavior: "smooth" })));
+    painel.appendChild(topo);
+    new IntersectionObserver(([e], o) => { if (e.isIntersecting) { painel.classList.add("rod-visto"); o.disconnect(); } }, { threshold: 0.3 }).observe(painel);
+  }
+
+  const mini = document.querySelector(".vitrine--mini");
+  if (mini && matchMedia("(max-width: 760px)").matches) {
+    const cards = [...mini.children];
+    const dica = document.createElement("div");
+    dica.className = "mini-dica";
+    dica.innerHTML = '<svg viewBox="0 0 22 14"><path d="M2 7h18M15 2l5 5-5 5"/></svg>Deslize para ver mais';
+    mini.before(dica);
+    const pontos = document.createElement("div");
+    pontos.className = "mini-pontos";
+    pontos.setAttribute("aria-hidden", "true");
+    pontos.innerHTML = cards.map(() => "<i></i>").join("");
+    mini.after(pontos);
+    const bolas = [...pontos.children];
+    const marcar = () => {
+      const c = mini.scrollLeft + mini.clientWidth / 2;
+      let m = 0, d = Infinity;
+      cards.forEach((el, k) => { const x = Math.abs(el.offsetLeft + el.offsetWidth / 2 - c); if (x < d) { d = x; m = k; } });
+      bolas.forEach((b, k) => b.classList.toggle("ativo", k === m));
+    };
+    mini.addEventListener("scroll", () => requestAnimationFrame(marcar), { passive: true });
+    marcar();
+  }
+})();

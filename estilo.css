@@ -3071,3 +3071,59 @@ body.acom-branco .cartaz-ver span { display: inline-block; animation: ac-seta 2.
 .inicio .perfil label span { transition: background .35s, color .35s, transform .35s var(--ease); }
 .inicio .perfil label:active span { transform: scale(.95); }
 @media (prefers-reduced-motion: reduce) { .ct-onda img { clip-path: none; opacity: 1; } .inicio .form .campo { opacity: 1; transform: none; } }
+
+/* ══ Outras acomodações (páginas das casas): carrossel de deslizar no celular ══ */
+@media (max-width: 760px) {
+  .vitrine.vitrine--mini {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; gap: 12px;
+    margin: 0 calc(-1 * var(--gutter)); padding: 6px var(--gutter) 18px; scroll-padding-inline: var(--gutter); scrollbar-width: none;
+  }
+  .vitrine.vitrine--mini::-webkit-scrollbar { display: none; }
+  .vitrine--mini > .cartaz { flex: 0 0 82%; scroll-snap-align: center; min-height: 0; }
+  .vitrine--mini > .cartaz.revelar { opacity: 1; transform: none; filter: none; }
+  .mini-pontos { display: flex; justify-content: center; gap: 6px; margin-top: 4px; }
+  .mini-pontos i { width: 7px; height: 7px; border-radius: 99px; background: rgb(30 42 51 / .2); transition: width .45s var(--ease), background .45s; }
+  .mini-pontos i.ativo { width: 24px; background: var(--acento); }
+  .mini-dica { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 2px 0 10px; font: 600 12px/1 "Plus Jakarta Sans", sans-serif; color: #6a7880; letter-spacing: .04em; }
+  .mini-dica svg { width: 22px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; animation: mini-dica 1.6s ease-in-out infinite; }
+  @keyframes mini-dica { 0%, 100% { transform: translateX(-4px); } 50% { transform: translateX(4px); } }
+}
+@media (min-width: 761px) { .mini-pontos, .mini-dica { display: none; } }
+
+/* ══ Rodapé branco e interativo (todas as páginas) ══ */
+.rodape, body:has(.vt-areia) .rodape, body.acom-branco .rodape { background: #fff; padding-top: 30px; }
+.rodape-painel, body.acom-branco .rodape-painel, body:has(.vitrine-topo) .rodape-painel {
+  position: relative; overflow: hidden; background: #fff !important; border: 1px solid #E6ECEF !important; border-radius: 26px;
+  box-shadow: 0 30px 60px -40px rgb(20 48 63 / .35); backdrop-filter: none !important; padding: 30px 34px;
+}
+.rodape-painel::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, #1FA3B8, #1F4E6B, #E36A4C, #1FA3B8); background-size: 200% 100%; animation: rod-faixa 6s linear infinite; }
+@keyframes rod-faixa { to { background-position: -200% 0; } }
+.rodape-logo { transition: transform .6s cubic-bezier(.3,1.6,.5,1); }
+.rodape-painel:hover .rodape-logo { transform: rotate(-4deg) scale(1.06); }
+.rodape-painel.rod-visto .rodape-logo { animation: rod-logo 1.2s cubic-bezier(.3,1.5,.5,1); }
+@keyframes rod-logo { from { opacity: 0; transform: translateY(16px) scale(.8); } to { opacity: 1; transform: none; } }
+.rodape-frase { color: #14303F !important; }
+.rodape-info a, .rod-links a { position: relative; color: #1F4E6B; text-decoration: none; font-weight: 600; }
+.rodape-info a::after, .rod-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: #E36A4C; transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease); }
+.rodape-info a:hover::after, .rod-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+.rod-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px 22px; padding-top: 18px; border-top: 1px solid #EEF2F4; font-size: 14px; }
+.rod-topo { position: absolute; right: 22px; bottom: 22px; width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer; background: #14303F; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 22px -10px rgb(20 48 63 / .6); transition: transform .4s cubic-bezier(.3,1.6,.5,1), background .3s; }
+.rod-topo:hover { transform: translateY(-4px); background: #E36A4C; }
+.rod-topo svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; animation: rod-seta 2s ease-in-out infinite; }
+@keyframes rod-seta { 0%, 100% { transform: translateY(2px); } 50% { transform: translateY(-3px); } }
+@media (max-width: 760px) {
+  .rodape-painel { padding: 26px 20px 80px; text-align: center; }
+  .rodape-info { justify-items: center; text-align: center; }
+  .rod-links { justify-content: center; }
+  .rod-topo { right: 50%; margin-right: -23px; bottom: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .rodape-painel::before, .rod-topo svg { animation: none; } }
+@media (max-width: 760px) {
+  .vitrine.vitrine--mini { align-items: stretch; }
+  .vitrine--mini > .cartaz { min-height: 380px !important; height: 380px; }
+  .vitrine--mini > .cartaz.revelar, .vitrine--mini > .cartaz.revelar:not(.visto) { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .vitrine--mini > .cartaz .cartaz-foto { clip-path: none !important; }
+  .rodape-painel { justify-items: center; }
+  .rodape-logo { margin: 0 auto; }
+}
+@media (max-width: 760px) { .mini-dica { margin: 4px 0 18px; } }

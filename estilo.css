@@ -2595,3 +2595,4 @@ body:has(.vt-areia) {
   .cooler { left: 296px; right: auto; bottom: calc(100% - 18px); width: 50px; }
 }
 .cg-cena { background: radial-gradient(circle 260px at var(--fx, 50%) var(--fy, 50%), rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 45%, rgb(30 20 10 / .5) 100%); }
+.caranguejo.na-frente .cg-balao { font-size: 8px; padding: 6px 9px; }

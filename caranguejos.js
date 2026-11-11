@@ -26,7 +26,6 @@
 
   const BICHOS = [
     { top: 30, tam: 46, vel: 0.55, dir: 1, ini: 0.1, cor: "#E0613F", escuro: "#B9472A", luz: "#F08A68" },
-    { top: 82, tam: 50, vel: 0.42, dir: 1, ini: 0.4, cor: "#3D7FB8", escuro: "#285C8A", luz: "#7FB2DC" },
   ];
   const FALAS = ["Oi!", "Bem-vindo à praia!", "Escolhe uma casa!", "Que dia lindo!", "Vem pra Garopaba!", "Tem lugar pra você!"];
 
@@ -144,8 +143,8 @@
   };
 
   /* ── 2 aparições na frente dos cartões, com o convite ── */
-  const MARCOS = [0.22, 0.62];
-  const FRASES = ["Oi! Venha se hospedar com o Anfitrião do Litoral!", "Escolha sua casa e reserve pelo WhatsApp."];
+  const MARCOS = [0.16, 0.44, 0.72];
+  const FRASES = ["Venha descansar!", "Que dia lindo!", "Olha essa casa!"];
   const cena = document.createElement("div");
   cena.className = "cg-cena";
   document.body.appendChild(cena);
@@ -157,7 +156,7 @@
     const passo = () => {
       balao.textContent = texto.slice(0, ++k);
       if (k % 2 === 0) som("tec1");
-      if (k < texto.length) setTimeout(passo, 38); else setTimeout(fim, 1900);
+      if (k < texto.length) setTimeout(passo, 55); else setTimeout(fim, 1700);
     };
     passo();
   };
@@ -177,7 +176,6 @@
     requestAnimationFrame(mover);
     som("chega");
     const balao = b.el.querySelector(".cg-balao");
-    balao.classList.add("cg-balao--longo");
     setTimeout(() => {
       if (naFrente !== b) return;
       b.el.classList.remove("andando");

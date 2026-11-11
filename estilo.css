@@ -2726,3 +2726,4 @@ body.acom-branco .cartaz--prop { background: linear-gradient(150deg, #1E6E8C, #1
 /* proporção: vetor sem distorção; no celular a composição (arco, onda e gaivotas) cabe inteira */
 .ab-cena--logo { width: 100%; height: clamp(200px, 23vw, 330px); shape-rendering: geometricPrecision; }
 @media (max-width: 860px) { .ab-cena--logo { height: 200px; margin-top: 0; } .lg-ave3 { display: none; } }
+@media (max-width: 860px) { .lg-ave3 { display: inline; } }

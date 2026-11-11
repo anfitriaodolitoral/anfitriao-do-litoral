@@ -2570,3 +2570,28 @@ body:has(.vt-areia) {
 .caranguejo.na-frente, .caranguejo.na-frente:is(*) { scale: 1 !important; }
 @media (min-width: 861px) { .caranguejo { scale: 1; width: calc(var(--w, 46px)); } }
 @media (min-width: 861px) { .cg-balao--longo { width: 150px; font-size: 8px; } }
+
+/* ══ cena do caranguejo: tela escurece com foco de luz, balão digitado ══ */
+.cg-cena {
+  position: fixed; inset: 0; z-index: 39; pointer-events: none; opacity: 0; transition: opacity .8s ease;
+  background: radial-gradient(circle 190px at var(--fx, 50%) var(--fy, 50%), rgb(255 240 210 / .12) 0%, rgb(255 240 210 / 0) 55%, rgb(30 20 10 / .55) 100%);
+}
+.cg-cena.on { opacity: 1; }
+.caranguejo.na-frente { transition: opacity 1s ease .4s, transform .9s cubic-bezier(.45,.05,.3,1); }
+.caranguejo.falando-fixo .cg-balao { scale: 1; animation: none; opacity: 1; }
+.cg-balao--longo { min-height: 1em; }
+
+/* conjunto de praia alinhado numa mesma linha de base */
+@media (min-width: 861px) {
+  .praia-gs { left: 121px; bottom: -240px; }
+  .cadeira-frente.cadeira-frente--2 { left: 130px; bottom: -240px; width: 104px; }
+  .cadeira-frente:not(.cadeira-frente--2) { left: 242px; bottom: -240px; width: 104px; }
+  .cooler { left: 356px; bottom: -240px; width: 74px; }
+}
+@media (max-width: 860px) {
+  .praia-gs { left: 144px; right: auto; bottom: calc(100% - 18px); width: 150px; }
+  .cadeira-frente.cadeira-frente--2 { left: 150px; right: auto; bottom: calc(100% - 18px); width: 66px; }
+  .cadeira-frente:not(.cadeira-frente--2) { left: 222px; right: auto; bottom: calc(100% - 18px); width: 66px; }
+  .cooler { left: 296px; right: auto; bottom: calc(100% - 18px); width: 50px; }
+}
+.cg-cena { background: radial-gradient(circle 260px at var(--fx, 50%) var(--fy, 50%), rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 45%, rgb(30 20 10 / .5) 100%); }

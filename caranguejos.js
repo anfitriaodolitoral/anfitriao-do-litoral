@@ -26,7 +26,6 @@
 
   const BICHOS = [
     { top: 30, tam: 46, vel: 0.55, dir: 1, ini: 0.1, cor: "#E0613F", escuro: "#B9472A", luz: "#F08A68" },
-    { top: 58, tam: 40, vel: 0.8, dir: -1, ini: 0.6, cor: "#E9A23B", escuro: "#B97A1F", luz: "#F6C873" },
     { top: 82, tam: 50, vel: 0.42, dir: 1, ini: 0.4, cor: "#3D7FB8", escuro: "#285C8A", luz: "#7FB2DC" },
   ];
   const FALAS = ["Oi!", "Bem-vindo à praia!", "Escolhe uma casa!", "Que dia lindo!", "Vem pra Garopaba!", "Tem lugar pra você!"];
@@ -55,6 +54,8 @@
     if (tipo === "oi") { tom(t, 880, 0.06, 0.16, "sine", 0.7); tom(t + 0.12, 1175, 0.06, 0.2, "sine", 0.85); }
     if (tipo === "festa") [0, 1, 2, 3].forEach((k) => tom(t + k * 0.07, [784, 988, 1175, 1568][k], 0.05, 0.16));
     if (tipo === "pulo") tom(t, 660, 0.07, 0.18, "sine", 0.5);
+    if (tipo === "tec1") tom(t, 2400 + Math.random() * 500, 0.018, 0.03, "square");
+    if (tipo === "chega") { tom(t, 392, 0.05, 0.5, "sine", 0.6); tom(t + 0.1, 587, 0.04, 0.6); }
   };
 
   /* ── criação ── */
@@ -144,24 +145,51 @@
 
   /* ── 2 aparições na frente dos cartões, com o convite ── */
   const MARCOS = [0.22, 0.62];
+  const FRASES = ["Oi! Venha se hospedar com o Anfitrião do Litoral!", "Escolha sua casa e reserve pelo WhatsApp."];
+  const cena = document.createElement("div");
+  cena.className = "cg-cena";
+  document.body.appendChild(cena);
+  const digitar = (b, texto, fim) => {
+    const balao = b.el.querySelector(".cg-balao");
+    balao.textContent = "";
+    b.el.classList.add("falando-fixo");
+    let k = 0;
+    const passo = () => {
+      balao.textContent = texto.slice(0, ++k);
+      if (k % 2 === 0) som("tec1");
+      if (k < texto.length) setTimeout(passo, 38); else setTimeout(fim, 1900);
+    };
+    passo();
+  };
   const feitos = new Set();
   let naFrente = null;
+  let falasFeitas = 0;
   const aparecer = () => {
-    const visiveis = bichos.filter((b) => b.x > 30 && b.x < innerWidth - 90);
-    const b = visiveis.length ? visiveis[Math.floor(Math.random() * visiveis.length)] : bichos[0];
+    const visiveis = bichos.filter((b) => b.x > 0 && b.x < innerWidth - 40);
+    const b = visiveis.length ? visiveis[0] : bichos[falasFeitas % bichos.length];
+    const texto = FRASES[falasFeitas++ % FRASES.length];
     naFrente = b;
-    b.el.classList.add("na-frente");
+    b.ocupado = true;
+    b.el.classList.add("na-frente", "andando");
+    cena.style.setProperty("--fx", "50%");
+    cena.style.setProperty("--fy", "calc(" + b.top + "% + 10px)");
+    cena.classList.add("on");
     requestAnimationFrame(mover);
-    acao(b, "acena", 3200);
-    b.el.querySelector(".cg-balao").classList.add("cg-balao--longo");
-    setTimeout(() => { if (naFrente === b) falar(b, "Oi, venha se hospedar com o Anfitrião do Litoral!", 3000); }, 750);
-    som("oi"); setTimeout(() => som("festa"), 350);
+    som("chega");
+    const balao = b.el.querySelector(".cg-balao");
+    balao.classList.add("cg-balao--longo");
     setTimeout(() => {
-      b.el.classList.remove("na-frente");
-      b.el.querySelector(".cg-balao").classList.remove("cg-balao--longo");
-      naFrente = null;
-      requestAnimationFrame(mover);
-    }, 3800);
+      if (naFrente !== b) return;
+      b.el.classList.remove("andando");
+      b.el.classList.add("acena");
+      digitar(b, texto, () => {
+        b.el.classList.remove("falando-fixo", "acena", "na-frente");
+        balao.classList.remove("cg-balao--longo");
+        cena.classList.remove("on");
+        naFrente = null; b.ocupado = false;
+        requestAnimationFrame(mover);
+      });
+    }, 900);
   };
   const conferirMarcos = () => {
     const max = document.documentElement.scrollHeight - innerHeight;
@@ -185,8 +213,6 @@
       const b = visiveis[Math.floor(Math.random() * visiveis.length)];
       ultimaFala = agora;
       acao(b, "acena", 1600);
-      falar(b, FALAS[Math.floor(Math.random() * FALAS.length)]);
-      som("oi");
     }, 650);
     if (!pedido) { pedido = true; requestAnimationFrame(mover); }
   }, { passive: true });
@@ -195,7 +221,6 @@
   bichos.forEach((b) => b.el.addEventListener("click", () => {
     audio();
     acao(b, "pulo", 700);
-    falar(b, ["Ei!", "Cócegas!", "Hehe!", "Tô passeando!"][Math.floor(Math.random() * 4)], 1400);
     setTimeout(() => som("pulo"), 30);
     setTimeout(() => som("tec"), 260);
   }));
@@ -204,5 +229,5 @@
   mover();
   requestAnimationFrame(() => bichos.forEach((b) => b.el.classList.add("chegou")));
   // chegada: o primeiro dá oi
-  setTimeout(() => { const b = bichos[0]; if (noMeio(b)) { acao(b, "acena", 1600); falar(b, "Oi!"); } }, 1800);
+
 })();

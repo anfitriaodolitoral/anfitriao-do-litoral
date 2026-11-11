@@ -27,6 +27,75 @@
   }
   requestAnimationFrame(() => topo && topo.classList.add("amanheceu"));
 
+  /* ── Som dos achados (gerado no navegador). Só toca depois do primeiro toque/clique na página. ── */
+  let ctx = null, livreEm = 0;
+  const audio = () => {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    if (!ctx) ctx = new AC();
+    if (ctx.state === "suspended") ctx.resume().catch(() => {});
+    return ctx;
+  };
+  ["pointerup", "touchend", "click", "keydown"].forEach((ev) => addEventListener(ev, audio, { passive: true }));
+  const tom = (c, t, f, v, d, tipo = "sine", de = 1) => {
+    const o = c.createOscillator(), g = c.createGain();
+    o.type = tipo; o.frequency.setValueAtTime(f * de, t);
+    if (de !== 1) o.frequency.exponentialRampToValueAtTime(f, t + 0.06);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+    o.connect(g).connect(c.destination); o.start(t); o.stop(t + d + 0.03);
+  };
+  const SONS = {
+    estrela: (c, t) => { tom(c, t, 1318.5, 0.09, 0.4, "sine", 0.85); tom(c, t + 0.07, 1975.5, 0.05, 0.35); },          // plim brilhante
+    vieira: (c, t) => { tom(c, t, 2637, 0.05, 0.12, "triangle"); tom(c, t + 0.05, 3136, 0.04, 0.12, "triangle"); },     // tilintar de concha
+    conchinha: (c, t) => { tom(c, t, 3520, 0.04, 0.09, "triangle"); tom(c, t + 0.04, 2960, 0.03, 0.1, "triangle"); },
+    buzio: (c, t) => { tom(c, t, 660, 0.07, 0.5, "sine", 0.7); tom(c, t, 990, 0.025, 0.4); },                           // "uuu" de búzio
+    coral: (c, t) => [0, 1, 2].forEach((k) => tom(c, t + k * 0.05, [1568, 2093, 2637][k], 0.04, 0.18)),               // cascatinha
+    caranguejo: (c, t) => [0, 1, 2, 3].forEach((k) => tom(c, t + k * 0.06, 1800 + k * 120, 0.035, 0.04, "square")),    // tec-tec-tec
+    pegadas: (c, t) => [0, 1].forEach((k) => { tom(c, t + k * 0.16, 220, 0.06, 0.08, "sine", 1.6); }),                 // passinhos na areia
+  };
+  const somDoAchado = (el) => {
+    if (!ctx || ctx.state !== "running") return;
+    const tipo = el.dataset.tipo; if (!SONS[tipo]) return;
+    const t = Math.max(ctx.currentTime + 0.02, livreEm);
+    SONS[tipo](ctx, t);
+    livreEm = t + 0.12; // não encavala quando vários aparecem juntos
+  };
+  const achar = (el) => { if (el.classList.contains("achou")) return; el.classList.add("achou"); somDoAchado(el); };
+
+  /* ── A água se recolhe para o meio conforme a rolagem; os achados aparecem na areia descoberta ── */
+  const mar = document.querySelector(".mar-fixo");
+  const agua = document.querySelector(".agua");
+  const achadosAgua = [...document.querySelectorAll(".achado--agua")];
+  const achadosPraia = [...document.querySelectorAll(".achado--praia")];
+  if (mar && agua) {
+    let pedido2 = false;
+    const suave = (x) => x * x * (3 - 2 * x);
+    const secar = () => {
+      pedido2 = false;
+      const r = agua.getBoundingClientRect();
+      // começa quando o topo da água chega ao meio da tela; termina perto do fim dos cartazes
+      const p = (innerHeight * 0.5 - r.top) / (r.height * 0.85);
+      const seca = reduzir ? (p > 0.5 ? 1 : 0) : suave(Math.min(1, Math.max(0, p)));
+      mar.style.setProperty("--seca", seca.toFixed(4));
+      raiz.style.setProperty("--seca", seca.toFixed(4));
+      const descoberto = seca * 50; // % de areia descoberta em cada lado
+      achadosAgua.forEach((a) => {
+        if (a.classList.contains("achou")) return;
+        const ar = a.getBoundingClientRect();
+        if (descoberto > +a.dataset.d + 1.5 && ar.top < innerHeight * 0.92 && ar.bottom > 0) achar(a);
+      });
+    };
+    addEventListener("scroll", () => { if (!pedido2) { pedido2 = true; requestAnimationFrame(secar); } }, { passive: true });
+    addEventListener("resize", secar);
+    secar();
+  }
+  if (achadosPraia.length) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) { const el = e.target; setTimeout(() => achar(el), Math.random() * 400); io.unobserve(el); }
+    }), { rootMargin: "0px 0px -12% 0px" });
+    achadosPraia.forEach((a) => io.observe(a));
+  }
+
   /* ── Brilho do sol na água: pontinhos que piscam ── */
   const cint = document.querySelector(".cintilar");
   if (cint && !reduzir) {

@@ -188,3 +188,31 @@
     }));
   }
 })();
+
+/* ── Cartazes: estrelinhas do Airbnb (só imóveis com nota real), inclinação ao passar o mouse ── */
+(() => {
+  const NOTAS = {
+    "apartamento-estiloso.html": { nota: "5,0", av: "9 avaliações" },
+    "minicasa-1.html": { nota: "5,0", av: "8 avaliações", selo: "Preferido dos hóspedes" },
+    "minicasa-2.html": { nota: "5,0", av: "1 avaliação" },
+  };
+  const ESTRELA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';
+  document.querySelectorAll(".vitrine .cartaz").forEach((c) => {
+    const d = NOTAS[c.getAttribute("href")];
+    if (!d) return;
+    const info = c.querySelector(".cartaz-info"), h2 = info && info.querySelector("h2");
+    if (!h2) return;
+    const el = document.createElement("div");
+    el.className = "estrelas";
+    el.setAttribute("aria-label", `Nota ${d.nota} de 5 no Airbnb, ${d.av}`);
+    el.innerHTML = `<span class="estrelas-icones">${ESTRELA.repeat(5)}</span><strong>${d.nota}</strong><span class="estrelas-av">· ${d.av}</span>`;
+    h2.after(el);
+    info.querySelectorAll(".chips li").forEach((li) => { if (li.textContent.includes("★")) li.remove(); });
+    if (d.selo) {
+      const s = document.createElement("span");
+      s.className = "selo-preferido";
+      s.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4c-3 3-3 9 0 12M17 4c3 3 3 9 0 12M9 7c-1.5 2-1.5 5 0 7M15 7c1.5 2 1.5 5 0 7"/></svg>' + d.selo;
+      c.querySelector(".cartaz-foto").appendChild(s);
+    }
+  });
+})();

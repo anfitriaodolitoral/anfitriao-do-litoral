@@ -2936,3 +2936,47 @@ body.acom-branco .vitrine { perspective: none; }
 body.acom-branco .cartaz.revelar { transform: translateY(50px); transform-origin: 50% 50%; }
 body.acom-branco .cartaz.revelar.visto { transform: none; filter: none; }
 body.acom-branco .cartaz { backface-visibility: hidden; }
+
+/* ══ Acomodações: sem o brilho amarelo na logo ══ */
+.ab-brilho { display: none !important; }
+
+/* ══ Cartazes: estrelinhas do Airbnb e mais animação ══ */
+.estrelas { display: flex; align-items: center; gap: 6px; margin: -2px 0 2px; font: 600 13px/1 "Plus Jakarta Sans", sans-serif; color: #222; }
+.estrelas-icones { display: inline-flex; gap: 2px; }
+.estrelas svg { width: 15px; height: 15px; fill: #FF385C; transform: scale(0) rotate(-60deg); }
+.cartaz.visto .estrelas svg { animation: estrela-pop .5s cubic-bezier(.3,1.8,.5,1) forwards; }
+.cartaz.visto .estrelas svg:nth-child(1) { animation-delay: .7s; } .cartaz.visto .estrelas svg:nth-child(2) { animation-delay: .82s; }
+.cartaz.visto .estrelas svg:nth-child(3) { animation-delay: .94s; } .cartaz.visto .estrelas svg:nth-child(4) { animation-delay: 1.06s; }
+.cartaz.visto .estrelas svg:nth-child(5) { animation-delay: 1.18s; }
+@keyframes estrela-pop { to { transform: scale(1) rotate(0); } }
+.estrelas-av { color: #6a6a6a; font-weight: 500; }
+.cartaz:hover .estrelas svg { animation: estrela-brilha .6s ease both; }
+.cartaz:hover .estrelas svg:nth-child(2) { animation-delay: .05s; } .cartaz:hover .estrelas svg:nth-child(3) { animation-delay: .1s; }
+.cartaz:hover .estrelas svg:nth-child(4) { animation-delay: .15s; } .cartaz:hover .estrelas svg:nth-child(5) { animation-delay: .2s; }
+@keyframes estrela-brilha { 0% { transform: scale(1); } 50% { transform: scale(1.35) rotate(15deg); } 100% { transform: scale(1); } }
+.selo-preferido { position: absolute; z-index: 3; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 6px;
+  font: 700 12px/1 "Plus Jakarta Sans", sans-serif; color: #222; background: #fff; padding: 8px 12px; border-radius: 999px;
+  box-shadow: 0 8px 18px -8px rgb(0 0 0 / .45); opacity: 0; transform: translateY(10px) scale(.9); }
+.selo-preferido svg { width: 16px; height: 16px; fill: none; stroke: #222; stroke-width: 1.8; stroke-linecap: round; }
+.cartaz.visto .selo-preferido { animation: selo-entra .6s cubic-bezier(.3,1.6,.5,1) 1.3s forwards; }
+@keyframes selo-entra { to { opacity: 1; transform: none; } }
+/* cartazes: inclinação suave ao passar o mouse (nítida quando parada) e elevação */
+@media (hover: hover) {
+  body.acom-branco .cartaz.revelar.visto { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .45s var(--ease), box-shadow .5s var(--ease), opacity 1s var(--ease); }
+  body.acom-branco .cartaz.revelar.visto:hover { box-shadow: 0 40px 70px -30px rgb(20 48 63 / .5); }
+  body.acom-branco .cartaz:not(:hover) { --rx: 0deg; --ry: 0deg; }
+}
+/* foto revela como cortina e o local entra deslizando */
+body.acom-branco .cartaz .cartaz-local { opacity: 0; transform: translateX(-14px); transition: opacity .7s var(--ease) .9s, transform .7s var(--ease) .9s; }
+body.acom-branco .cartaz.visto .cartaz-local { opacity: 1; transform: none; }
+body.acom-branco .cartaz-ver span { display: inline-block; animation: ac-seta 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .estrelas svg, .selo-preferido, body.acom-branco .cartaz .cartaz-local { opacity: 1; transform: none; animation: none !important; } }
+/* parado: sem nenhuma transformação (nitidez máxima); a inclinação só existe com o mouse em cima */
+@media (hover: hover) {
+  body.acom-branco .cartaz.revelar.visto { transform: none; }
+  body.acom-branco .cartaz.revelar.visto:hover { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px); }
+}
+.estrelas { color: #fff; text-shadow: 0 1px 6px rgb(0 0 0 / .4); }
+.estrelas-av { color: rgb(255 255 255 / .85); }
+.estrelas svg { filter: drop-shadow(0 1px 3px rgb(0 0 0 / .35)); }
+.selo-preferido { top: 56px; bottom: auto; left: 14px; right: auto; }

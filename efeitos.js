@@ -176,3 +176,39 @@
   addEventListener("scroll", () => requestAnimationFrame(mover), { passive: true });
   mover();
 })();
+
+/* ── Página inicial: "Ver todas" muda de cor no celular; trilha e sons de "Nossa gestão" ── */
+(() => {
+  const toque = !matchMedia("(hover: hover)").matches;
+  const todas = document.querySelector(".inicio .cinema-todas");
+  if (todas && toque) new IntersectionObserver(([e], o) => { if (e.isIntersecting) { setTimeout(() => todas.classList.add("toque"), 300); o.disconnect(); } }, { threshold: 0.9 }).observe(todas);
+
+  const sec = document.querySelector(".inicio .servicos"), trilha = document.querySelector(".gestao-trilha");
+  const cards = document.querySelector(".inicio .cuidados");
+  if (!sec || !trilha || !cards) return;
+  const barra = () => {
+    let p;
+    if (cards.scrollWidth > cards.clientWidth + 4) p = cards.scrollLeft / (cards.scrollWidth - cards.clientWidth); // carrossel no celular
+    else { const r = sec.getBoundingClientRect(); p = (innerHeight * 0.85 - r.top) / (r.height * 0.8); }
+    trilha.style.setProperty("--gp", Math.min(1, Math.max(0, p)).toFixed(3));
+  };
+  addEventListener("scroll", () => requestAnimationFrame(barra), { passive: true });
+  cards.addEventListener("scroll", () => requestAnimationFrame(barra), { passive: true });
+  barra();
+
+  // som curtinho ao trocar de cartão no carrossel do celular
+  let ctx = null, ultimo = -1;
+  const audio = () => { const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null; if (!ctx) ctx = new AC(); if (ctx.state === "suspended") ctx.resume().catch(() => {}); return ctx; };
+  ["pointerup", "touchend", "click"].forEach((ev) => addEventListener(ev, audio, { passive: true }));
+  const tique = (i) => {
+    if (!ctx || ctx.state !== "running") return;
+    const t = ctx.currentTime + 0.01, o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = "sine"; o.frequency.setValueAtTime([660, 740, 830, 990][i % 4], t);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.06, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
+    o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + 0.2);
+  };
+  new MutationObserver(() => {
+    const i = [...cards.children].findIndex((c) => c.classList.contains("em-foco"));
+    if (i >= 0 && i !== ultimo) { if (ultimo !== -1) tique(i); ultimo = i; }
+  }).observe(cards, { subtree: true, attributes: true, attributeFilter: ["class"] });
+})();

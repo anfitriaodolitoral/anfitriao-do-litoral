@@ -2980,3 +2980,26 @@ body.acom-branco .cartaz-ver span { display: inline-block; animation: ac-seta 2.
 .estrelas-av { color: rgb(255 255 255 / .85); }
 .estrelas svg { filter: drop-shadow(0 1px 3px rgb(0 0 0 / .35)); }
 .selo-preferido { top: 56px; bottom: auto; left: 14px; right: auto; }
+
+/* ══ Página inicial: nomes das casas como título dos cartazes (sem as frases) ══ */
+.inicio .filme-cartao .imovel-local { font-size: 15px; letter-spacing: .08em; color: #fff; margin-bottom: 12px; display: block; font-weight: 700; }
+
+/* "Ver todas as acomodações": no celular a cor troca ao aparecer na tela e ao tocar */
+.inicio .cinema-todas.toque::before, .inicio .cinema-todas:active::before { transform: scaleX(1); }
+.inicio .cinema-todas.toque .cinema-seta, .inicio .cinema-todas:active .cinema-seta { background: #fff; color: #E36A4C; transform: rotate(-45deg); }
+
+/* ══ 03 · Nossa gestão: fundo branco, trilha de progresso e cartões com mais vida ══ */
+.inicio .servicos { background: #fff !important; }
+.inicio .servicos::before { content: none !important; }
+.inicio .servicos h2 { color: #14303F; }
+.inicio .servicos .rotulo { color: #E36A4C; }
+.gestao-trilha { position: relative; max-width: var(--largura); height: 3px; margin: 0 auto 26px; border-radius: 3px; background: #EDF1F3; overflow: hidden; }
+.gestao-trilha span { position: absolute; inset: 0; transform-origin: left; transform: scaleX(var(--gp, 0)); background: linear-gradient(90deg, #1FA3B8, #1F4E6B, #E36A4C); transition: transform .3s linear; }
+.inicio .cuidado { position: relative; overflow: hidden; }
+.inicio .cuidado::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--tinta); transform: scaleX(0); transform-origin: left; transition: transform .8s var(--ease); }
+.inicio .cuidado.visto::after, .inicio .cuidado.em-foco::after { transform: scaleX(1); }
+.inicio .cuidado .cuidado-num { font-size: 40px; line-height: 1; font-weight: 800; color: transparent; -webkit-text-stroke: 1.4px var(--tinta); opacity: .7; margin-bottom: 14px; }
+@media (hover: hover) { .inicio .cuidado:hover .cuidado-num { color: var(--tinta); opacity: 1; transition: color .4s; } }
+.inicio .cuidado.em-foco .cuidado-num { color: var(--tinta); opacity: 1; transition: color .5s; }
+@media (max-width: 760px) { .gestao-trilha { margin-bottom: 14px; } }
+.inicio .filme-cartao .imovel-local { font: 800 clamp(20px, 1.9vw, 26px)/1.15 "Plus Jakarta Sans", sans-serif; letter-spacing: -.02em; text-transform: none; }

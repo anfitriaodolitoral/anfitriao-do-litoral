@@ -20,7 +20,7 @@
 
   /* 2 · Rolagem suave (Lenis), se a biblioteca carregou */
   if (!reduzir && window.Lenis && !matchMedia("(pointer: coarse)").matches) {
-    const lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+    const lenis = new Lenis({ duration: 0.75, smoothWheel: true });
     const quadro = (t) => { lenis.raf(t); requestAnimationFrame(quadro); };
     requestAnimationFrame(quadro);
     document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", (e) => {

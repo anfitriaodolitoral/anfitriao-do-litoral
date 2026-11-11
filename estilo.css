@@ -2826,3 +2826,36 @@ body.acom-branco .cartaz--prop { background: linear-gradient(150deg, #1E6E8C, #1
   .inicio .cine-dica { top: calc(158px + 118vw + 10px); }
 }
 .faq-painel[hidden] { display: none !important; }
+
+/* ══ Acomodações: logo maior e mais cinematográfica ══ */
+.ab-logo { width: min(820px, 92vw); margin-top: 26px; transform: translateY(calc(var(--rol, 0) * 60px)) scale(calc(1 - var(--rol, 0) * .12)); transform-origin: 50% 100%; }
+.ab-logo svg { position: relative; z-index: 1; }
+/* sol: brilho coral pulsando dentro do círculo */
+.ab-brilho { position: absolute; z-index: 0; left: 47.8%; top: 78%; width: 64%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgb(255 205 170 / .55) 0%, rgb(255 225 200 / .25) 38%, transparent 68%); opacity: 0; }
+.ab-topo.desenhou .ab-brilho { animation: ab-brilho-nasce 2.8s ease .6s forwards, ab-brilho-pulsa 5s ease-in-out 3.4s infinite alternate; }
+@keyframes ab-brilho-nasce { from { opacity: 0; scale: .5; } to { opacity: 1; scale: 1; } }
+@keyframes ab-brilho-pulsa { from { opacity: 1; scale: 1; } to { opacity: .7; scale: 1.08; } }
+/* reflexo de luz correndo na água sob a onda */
+.ab-reflexo { position: absolute; z-index: 2; left: 4%; right: 2%; bottom: 3%; height: 9%; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); }
+.ab-reflexo::before { content: ""; position: absolute; inset: 0; width: 30%; background: linear-gradient(90deg, transparent, rgb(255 255 255 / .75), transparent); transform: translateX(-120%); }
+.ab-topo.desenhou .ab-reflexo::before { animation: ab-reflexo 4.5s ease-in-out 3s infinite; }
+@keyframes ab-reflexo { 0% { transform: translateX(-120%); } 60%, 100% { transform: translateX(380%); } }
+/* respingos saindo da crista da onda */
+.sp { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.ab-topo.desenhou .sp { animation: ab-respingo 2.6s cubic-bezier(.2,.7,.4,1) infinite; }
+.ab-topo.desenhou .sp1 { animation-delay: 2.4s; --dx: 40px; --dy: -46px; }
+.ab-topo.desenhou .sp2 { animation-delay: 2.7s; --dx: 70px; --dy: -30px; }
+.ab-topo.desenhou .sp3 { animation-delay: 3s; --dx: 18px; --dy: -60px; }
+.ab-topo.desenhou .sp4 { animation-delay: 3.3s; --dx: 84px; --dy: -14px; }
+.ab-topo.desenhou .sp5 { animation-delay: 3.6s; --dx: -10px; --dy: -40px; }
+.ab-topo.desenhou .sp6 { animation-delay: 3.9s; --dx: 50px; --dy: -70px; }
+@keyframes ab-respingo { 0% { opacity: 0; transform: translate(0, 0) scale(.4); } 15% { opacity: .9; } 70% { opacity: .6; transform: translate(var(--dx), var(--dy)) scale(1); } 100% { opacity: 0; transform: translate(calc(var(--dx) * 1.2), calc(var(--dy) + 40px)) scale(.6); } }
+.ab-logo::after { width: 70%; height: 2px; background: linear-gradient(90deg, transparent, #9EC2D3, transparent); background-size: 200% 100%; animation: ab-linha 5s linear infinite; }
+@keyframes ab-linha { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+/* cartazes entram em cascata com leve giro 3D */
+body.acom-branco .cartaz.revelar { transform: translateY(70px) rotateX(10deg) scale(.94); transform-origin: 50% 100%; }
+@media (max-width: 860px) { .ab-logo { width: 94vw; margin-top: 18px; } }
+@media (prefers-reduced-motion: reduce) { .ab-brilho { opacity: 1; } .sp, .ab-reflexo::before { display: none; } .ab-logo { transform: none; } }
+.ab-brilho { top: 52%; width: 52%; }

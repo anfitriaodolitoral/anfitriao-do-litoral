@@ -79,7 +79,7 @@
     links.setAttribute("aria-label", "Links do rodapé");
     const itens = [["#historia", "Nossa história"], ["#servicos", "Nossa gestão"], ["#perguntas", "Dúvidas"], ["#contato", "Seja parceiro"]];
     links.innerHTML = itens.map(([h, t]) => '<a href="' + base + h + '">' + t + "</a>").join("") +
-      '<a href="acomodacoes.html">Acomodações</a><a href="https://wa.me/5548991451520" target="_blank" rel="noopener">WhatsApp</a>';
+      '<a href="acomodacoes.html">Acomodações</a><a href="https://wa.me/5548991451520?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Anfitri%C3%A3o%20do%20Litoral%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">WhatsApp</a>';
     painel.appendChild(links);
     const topo = document.createElement("button");
     topo.type = "button";

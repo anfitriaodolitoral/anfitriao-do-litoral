@@ -3127,3 +3127,14 @@ body.acom-branco .cartaz-ver span { display: inline-block; animation: ac-seta 2.
   .rodape-logo { margin: 0 auto; }
 }
 @media (max-width: 760px) { .mini-dica { margin: 4px 0 18px; } }
+
+/* botão minimalista "Ver todas as acomodações" (páginas das casas) */
+.ver-todas-mini { display: flex; width: fit-content; align-items: center; gap: 12px; margin: 34px auto 0; padding: 10px 10px 10px 22px;
+  border: 1px solid #DCE3E7; border-radius: 999px; text-decoration: none; color: #14303F; font: 600 14.5px/1 "Plus Jakarta Sans", sans-serif;
+  transition: border-color .35s, gap .45s var(--ease), box-shadow .35s; }
+.ver-todas-mini i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #14303F; color: #fff; transition: background .35s, transform .45s var(--ease); }
+.ver-todas-mini svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.ver-todas-mini:hover { border-color: #14303F; gap: 18px; box-shadow: 0 12px 26px -16px rgb(20 48 63 / .45); }
+.ver-todas-mini:hover i { background: #E36A4C; transform: rotate(-45deg); }
+.ver-todas-mini:active { transform: scale(.97); }
+@media (max-width: 760px) { .ver-todas-mini { margin-top: 20px; } }

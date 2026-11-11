@@ -2457,3 +2457,26 @@ body:has(.vt-areia) {
 @media (min-width: 861px) { .caranguejo { scale: 1.25; } }
 .praia-grade--2 { z-index: 2; }
 .praia-texto, .vt-areia .vt-cartao { background: rgb(255 252 246 / .95); }
+/* conjunto de praia proporcional, apoiado no canto inferior esquerdo do cartão */
+.praia-palco { margin-top: 90px; }
+.praia-gs { left: -120px; width: 230px; top: auto; bottom: 0; z-index: 3; }
+.praia-gs .gs-sombra { left: 10px; width: 240px; bottom: -14px; height: 46px; }
+.cadeira-frente { left: -235px; right: auto; top: auto; width: 104px; bottom: -6px; z-index: 4; }
+.cadeira-frente--2 { left: -140px; right: auto; top: auto; width: 104px; bottom: -10px; z-index: 4; }
+.cooler { position: absolute; z-index: 4; left: -44px; bottom: -14px; width: 74px; height: auto; filter: drop-shadow(0 6px 6px rgb(110 80 40 / .25)); }
+@media (max-width: 860px) {
+  .praia-palco { margin-top: 150px; }
+  .praia-gs { left: 70px; width: 150px; top: auto; bottom: calc(100% - 14px); }
+  .praia-gs .gs-sombra { width: 150px; left: 0; }
+  .cadeira-frente { left: 6px; width: 66px; top: auto; bottom: calc(100% - 18px); }
+  .cadeira-frente--2 { left: 62px; width: 66px; top: auto; bottom: calc(100% - 20px); }
+  .cooler { left: 128px; width: 50px; bottom: calc(100% - 22px); }
+}
+.praia-gs .guarda-sol { transform-origin: 52% 98%; rotate: -24deg; }
+.praia-gs .gs-sombra { left: -70px; }
+@media (min-width: 861px) {
+  .praia-gs { left: -122px; }
+  .cadeira-frente { left: -262px; }
+  .cadeira-frente--2 { left: -166px; }
+}
+@media (max-width: 860px) { .praia-gs .guarda-sol { rotate: -10deg; } .praia-gs .gs-sombra { left: -10px; } }

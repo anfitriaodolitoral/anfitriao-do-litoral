@@ -2889,3 +2889,31 @@ body.acom-branco .cartaz.revelar { transform: translateY(70px) rotateX(10deg) sc
   .inicio .historia-texto .anfitriao-dados span { font-size: 10px !important; }
   .inicio .historia-texto .anfitriao-botao { margin-top: 10px; padding: 9px 12px; font-size: 12.5px; }
 }
+
+/* ══ Página inicial · 01 Acomodações: fundo branco e entrada de cinema ══ */
+.inicio .cinema { background: #fff !important; }
+.inicio .cinema::before, .inicio .cinema::after { content: none !important; }
+.inicio .cinema-topo .rotulo { color: #E36A4C; }
+.inicio .cinema h2 { color: #14303F; text-shadow: none; }
+.ac-marca { width: 120px; margin: 0 auto 14px; }
+.ac-marca img { display: block; width: 100%; height: auto; clip-path: circle(0% at 30% 85%); opacity: 0; }
+.cinema-topo.visto .ac-marca img, .cinema.no-topo .ac-marca img { animation: ab-logo-entra 1.8s cubic-bezier(.6,0,.2,1) forwards; }
+/* cartazes entram pelos lados, como cortinas, e ganham profundidade com a rolagem */
+@media (min-width: 761px) {
+  .inicio .filmes { perspective: 1600px; }
+  .inicio .filme { transform: translateY(var(--par, 0px)); transition: clip-path 1.6s var(--ease), scale .5s var(--ease), filter .5s var(--ease), opacity 1.2s var(--ease), translate 1.2s var(--ease); }
+  .inicio .filme:not(.no-ar) { opacity: 0; translate: -60px 0; }
+  .inicio .filme--direita:not(.no-ar) { translate: 60px 0; }
+  .inicio .filme.no-ar { opacity: 1; translate: 0 0; }
+  .inicio .filme--direita.no-ar { transition-delay: .18s; }
+}
+.inicio .filme { box-shadow: 0 34px 60px -32px rgb(20 48 63 / .45); }
+.inicio .filme-tela::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / .18), transparent 30%); pointer-events: none; }
+/* botão "Ver todas" */
+.inicio .cinema-todas { background: #14303F; color: #fff; border-color: #14303F; }
+.inicio .cinema-todas::before { background: #E36A4C; }
+.inicio .cinema-todas:hover { color: #fff; }
+.inicio .cinema-todas .cinema-seta { background: rgb(255 255 255 / .14); color: #fff; }
+.inicio .cinema-todas:hover .cinema-seta { background: #fff; color: #E36A4C; }
+.inicio .cinema-todas .cinema-seta { animation: ac-seta 2.4s ease-in-out infinite; }
+@keyframes ac-seta { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }

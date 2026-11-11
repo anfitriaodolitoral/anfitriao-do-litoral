@@ -160,3 +160,19 @@
   const primeira = faq.querySelector(".faq-painel:not([hidden]) .faq-item");
   if (primeira) primeira.open = true;
 })();
+
+/* ── Página inicial · 01 Acomodações: marca da onda e profundidade entre os cartazes ── */
+(() => {
+  const topo = document.querySelector(".inicio .cinema-topo");
+  if (!topo) return;
+  new IntersectionObserver(([e], o) => { if (e.isIntersecting) { topo.classList.add("visto"); o.disconnect(); } }, { threshold: 0.4 }).observe(topo);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || innerWidth < 761) return;
+  const filmes = [...document.querySelectorAll(".inicio .filme")];
+  const mover = () => filmes.forEach((f, i) => {
+    const r = f.getBoundingClientRect();
+    const c = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
+    f.style.setProperty("--par", (c * (i % 2 ? -36 : 36)).toFixed(1) + "px");
+  });
+  addEventListener("scroll", () => requestAnimationFrame(mover), { passive: true });
+  mover();
+})();

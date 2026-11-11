@@ -32,7 +32,7 @@
   const canvas = cine && cine.querySelector(".cine-canvas");
   if (cine && canvas && S.frames && S.frames.total) {
     const ctx = canvas.getContext("2d");
-    const total = S.frames.total;
+    const total = (celular && S.frames.totalMobile) || S.frames.total;
     const padrao = celular ? S.frames.mobile : S.frames.desktop;
     const src = (i) => padrao.replace("{n}", String(i + 1).padStart(4, "0"));
     const quadros = new Array(total);

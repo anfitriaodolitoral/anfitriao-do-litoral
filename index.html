@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/frames/desktop/f_0001.webp">
-  <link rel="stylesheet" href="estilo.css?v=20261111i">
+  <link rel="stylesheet" href="estilo.css?v=20261111k">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -159,44 +159,31 @@
 
         <ul class="historia-fatos">
           <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/></svg>
+            <span class="fato-icone" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/></svg></span>
             <div><strong>Gestão de ponta a ponta</strong><span>Do anúncio ao check-out, sem você precisar estar lá.</span></div>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-5h4v5"/></svg>
+            <span class="fato-icone" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-5h4v5"/></svg></span>
             <div><strong>Cuidado em cada detalhe</strong><span>Atenção à conservação e às condições de cada imóvel.</span></div>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20c0-3 2.7-5 6-5s6 2 6 5M14 15.3c.6-.2 1.3-.3 2-.3 3.3 0 6 2 6 5"/></svg>
+            <span class="fato-icone" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20c0-3 2.7-5 6-5s6 2 6 5M14 15.3c.6-.2 1.3-.3 2-.3 3.3 0 6 2 6 5"/></svg></span>
             <div><strong>Equipe de confiança</strong><span>Equipe de limpeza própria e profissionais da região para manutenção.</span></div>
+          </li>
+          <li class="fato-renda">
+            <span class="fato-icone fato-icone--renda" aria-hidden="true">
+              <svg class="fato-nota" viewBox="0 0 120 64">
+                <rect x="3" y="3" width="114" height="58" rx="9" fill="#5DBB86" stroke="#2E7D52" stroke-width="4"/>
+                <text x="15" y="25" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="13" fill="#1F5C3B">R$</text>
+                <g class="fato-rosto"><circle cx="50" cy="29" r="4.5" fill="#173F2A"/><circle cx="70" cy="29" r="4.5" fill="#173F2A"/><path d="M48 39 Q60 50 72 39" fill="none" stroke="#173F2A" stroke-width="3.6" stroke-linecap="round"/></g>
+              </svg>
+              <span class="fato-moedas"></span>
+              <span class="fato-balao">Mais rentabilidade!</span>
+            </span>
+            <div><strong>Mais rentabilidade</strong><span>Seu imóvel rendendo nos dias em que ficaria fechado.</span></div>
           </li>
         </ul>
 
-        <button type="button" class="renda" aria-label="Mais rentabilidade. Toque para ouvir.">
-          <span class="renda-palco" aria-hidden="true">
-            <svg class="renda-grafico" viewBox="0 0 300 120" preserveAspectRatio="none">
-              <defs><linearGradient id="renda-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3FA06A" stop-opacity=".35"/><stop offset="1" stop-color="#3FA06A" stop-opacity="0"/></linearGradient></defs>
-              <path class="renda-area" d="M0 108 C40 104 60 96 95 88 S150 70 185 56 S250 26 300 10 L300 120 L0 120Z" fill="url(#renda-g)"/>
-              <path class="renda-linha" pathLength="1" d="M0 108 C40 104 60 96 95 88 S150 70 185 56 S250 26 300 10"/>
-            </svg>
-            <span class="renda-chuva"></span>
-            <span class="renda-nota">
-              <svg viewBox="0 0 120 64">
-                <rect x="2" y="2" width="116" height="60" rx="9" fill="#5DBB86" stroke="#2E7D52" stroke-width="3"/>
-                <rect x="10" y="10" width="100" height="44" rx="6" fill="none" stroke="#2E7D52" stroke-width="1.5" stroke-dasharray="3 3" opacity=".6"/>
-                <text x="17" y="27" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="11" fill="#1F5C3B">R$</text>
-                <text x="83" y="52" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="11" fill="#1F5C3B">R$</text>
-                <g class="renda-rosto"><circle cx="50" cy="29" r="3.6" fill="#173F2A"/><circle cx="70" cy="29" r="3.6" fill="#173F2A"/><path d="M49 38 Q60 48 71 38" fill="none" stroke="#173F2A" stroke-width="3" stroke-linecap="round"/><circle cx="42" cy="38" r="3" fill="#F28B82" opacity=".55"/><circle cx="78" cy="38" r="3" fill="#F28B82" opacity=".55"/></g>
-              </svg>
-              <span class="renda-balao">Mais rentabilidade!</span>
-            </span>
-          </span>
-          <span class="renda-texto">
-            <strong>Mais rentabilidade</strong>
-            <small>Seu imóvel rendendo nos dias em que ficaria fechado.</small>
-          </span>
-          <span class="renda-som" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>Toque para ouvir</span>
-        </button>
       </div>
 
     </div>
@@ -369,6 +356,6 @@
 <script src="efeitos.js?v=3"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="cinema-global.js"></script>
-<script src="renda.js"></script>
+<script src="renda.js?v=2"></script>
 </body>
 </html>

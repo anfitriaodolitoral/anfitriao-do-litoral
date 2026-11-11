@@ -1680,3 +1680,22 @@ body:has(.vitrine-topo) .rodape-painel { background: rgb(255 255 255 / .6); bord
   .inicio .cena-3 { bottom: calc(30px + env(safe-area-inset-bottom, 0px)); }
   .inicio .cena-3 .painel--cine { box-shadow: 0 0 0 1px rgb(0 0 0 / .05), 0 10px 22px -10px rgb(4 20 32 / .28); }
 }
+
+/* ══ Hero no celular: cena 1 centralizada no alto (sobre a mata), vídeo termina antes do rodapé
+      e a cena 2 fica só na faixa branca, acima de "01 · Acomodações" ══ */
+@media (max-width: 760px) {
+  .inicio .cine-palco { background: #fff; }
+  .inicio .cine-canvas { inset: 0 0 auto; height: 76%; }
+  .inicio .cine-vinheta {
+    background:
+      linear-gradient(to bottom, transparent 56%, rgb(255 255 255 / .8) 70%, #fff 76%, #fff 100%),
+      radial-gradient(120% 70% at 50% 35%, transparent 62%, rgb(10 28 40 / .16) 100%);
+  }
+  .inicio .cena-1 {
+    top: calc(96px + env(safe-area-inset-top, 0px)); bottom: auto;
+    left: var(--gutter); right: var(--gutter); margin-inline: auto;
+    width: auto; max-width: 330px; text-align: center;
+  }
+  .inicio .cena-1 .titulo-abertura { margin-bottom: 0; }
+  .inicio .cena-3 { bottom: calc(18px + env(safe-area-inset-bottom, 0px)); }
+}

@@ -2390,3 +2390,70 @@ body:has(.praia) { background-image: var(--areia-brilho), var(--areia-grao), lin
   .cadeira-frente { left: 32px; top: -94px; width: 66px; z-index: 4; }
   .cadeira-frente--2 { left: 88px; top: -90px; width: 66px; }
 }
+
+/* ══ Acomodações 100% areia ══ */
+body:has(.vt-areia) {
+  background-color: #EAD6AE;
+  background-image: var(--areia-brilho), var(--areia-grao), linear-gradient(180deg, #EEDCB8, #E2C99C);
+  background-size: 180px 180px, 220px 220px, 100% 100%;
+}
+.vt-areia { position: relative; z-index: 2; background: none; overflow: visible; min-height: 0; display: grid; justify-items: center; padding: 130px var(--gutter) 50px; }
+.vt-areia::before, .vt-areia::after { content: none; }
+.vt-areia .vt-cartao {
+  position: relative; z-index: 2; width: min(700px, 100%); text-align: center;
+  padding: clamp(22px, 2.8vw, 34px) clamp(20px, 3vw, 40px);
+  background: rgb(255 252 246 / .86); border-radius: 26px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 30px 60px -30px rgb(110 75 35 / .45);
+}
+.vt-areia .vt-cartao .rotulo { color: #B5573C; text-shadow: none; }
+.vt-areia .vt-cartao h1 { color: #2B1E18; text-shadow: none; font-size: clamp(32px, 3.9vw, 54px); margin-bottom: .3em; }
+.vt-areia .vt-cartao .giro-linha { color: #2B1E18; text-shadow: none; font-size: clamp(18px, 1.8vw, 24px); }
+.vt-areia .vt-cartao .giro-palavra { color: #C4553A; }
+.vt-areia .vt-cartao .giro::after { background: #C4553A; opacity: .5; }
+.vt-areia .vt-cartao .surgir { color: #5A4A42; text-shadow: none; font-size: 15px; }
+.vt-areia .filtros { margin-top: 22px; }
+.vt-areia .filtro { color: #7A3E2C; background: rgb(196 85 58 / .08); border-color: rgb(196 85 58 / .3); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.vt-areia .filtro:hover { background: rgb(196 85 58 / .16); }
+.vt-areia .filtro.ativo { color: #fff; background: linear-gradient(135deg, #E07A50, #C4553A); border-color: transparent; box-shadow: 0 10px 22px -12px rgb(196 85 58 / .8); }
+.vt-areia + .vitrine { margin-top: 0 !important; padding-top: 30px; }
+
+/* caranguejos */
+.caranguejo { position: fixed; left: 0; z-index: 3; pointer-events: none; display: block; opacity: 0; transition: opacity 1s ease .4s; filter: drop-shadow(0 4px 3px rgb(110 75 35 / .3)); will-change: transform; }
+.caranguejo.chegou { opacity: 1; }
+.caranguejo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cg-pernas, .cg-garra, .cg-pinca { transform-box: fill-box; }
+.cg-pernas--a { transform-origin: 50% 0; }
+.cg-pernas--b { transform-origin: 50% 0; }
+.cg-garra--e { transform-origin: 100% 100%; } .cg-garra--d { transform-origin: 0 100%; }
+.cg-pinca { transform-origin: 0 0; }
+.caranguejo.andando .cg-pernas--a { animation: cg-perna .16s ease-in-out var(--atraso, 0s) infinite alternate; }
+.caranguejo.andando .cg-pernas--b { animation: cg-perna .16s ease-in-out calc(var(--atraso, 0s) + .08s) infinite alternate-reverse; }
+.caranguejo.andando .cg-garra--e { animation: cg-garra .3s ease-in-out infinite alternate; }
+.caranguejo.andando .cg-garra--d { animation: cg-garra .3s ease-in-out .15s infinite alternate-reverse; }
+.caranguejo.andando .cg-pinca { animation: cg-pinca .22s ease-in-out infinite alternate; }
+.caranguejo:not(.andando) .cg-olho { animation: cg-olha 3s ease-in-out infinite; }
+@keyframes cg-perna { from { transform: rotate(-9deg) translateY(-1px); } to { transform: rotate(9deg) translateY(1px); } }
+@keyframes cg-garra { to { transform: rotate(-12deg) translateY(-2px); } }
+@keyframes cg-pinca { to { transform: rotate(28deg); } }
+@keyframes cg-olha { 0%, 40%, 100% { transform: translateX(0); } 50%, 80% { transform: translateX(1.2px); } }
+
+/* convite: guarda-sol à esquerda, duas cadeiras à direita */
+@media (min-width: 861px) {
+  .praia-gs { left: -372px; width: 380px; bottom: -40px; z-index: 3; }
+  .cadeira-frente { left: calc(100% + 28px); width: 132px; bottom: -28px; z-index: 3; }
+  .cadeira-frente--2 { left: calc(100% + 138px); width: 132px; bottom: -34px; }
+}
+@media (max-width: 860px) {
+  .vt-areia { padding-top: 110px; }
+  .praia-palco { margin-top: 210px; }
+  .praia-gs { left: 0; width: 170px; top: -196px; }
+  .cadeira-frente { left: auto; right: 74px; top: -96px; width: 66px; }
+  .cadeira-frente--2 { left: auto; right: 12px; top: -92px; width: 66px; }
+  .caranguejo { max-width: 36px; }
+}
+.caranguejo { z-index: 1; }
+.vt-areia, .vitrine, .praia-palco, body:has(.vt-areia) .rodape { position: relative; z-index: 2; }
+.praia { z-index: auto; }
+@media (min-width: 861px) { .caranguejo { scale: 1.25; } }
+.praia-grade--2 { z-index: 2; }
+.praia-texto, .vt-areia .vt-cartao { background: rgb(255 252 246 / .95); }

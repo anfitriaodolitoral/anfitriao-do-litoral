@@ -16,9 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/por-do-sol.webp" media="(min-width: 761px)">
-  <link rel="preload" as="image" href="assets/img/por-do-sol-celular.webp" media="(max-width: 760px)">
-  <link rel="stylesheet" href="estilo.css?v=orla6">
+  <link rel="stylesheet" href="estilo.css?v=areia4">
 </head>
 <body class="pagina-interna">
 
@@ -36,17 +34,7 @@
 </header>
 
 <main>
-  <section class="vitrine-topo vt-cine vt-pds">
-    <div class="ceu" aria-hidden="true">
-      <picture><source media="(max-width: 760px)" srcset="assets/img/por-do-sol-celular.webp"><img class="vt-foto" src="assets/img/por-do-sol.webp" alt="" fetchpriority="high"></picture>
-      <span class="vt-brilho"></span>
-      <div class="cintilar"></div>
-      <span class="vt-anoitecer"></span>
-      <span class="vt-grao"></span>
-      <svg class="gaivota gv1" viewBox="0 0 24 10"><path d="M1 7 Q6 1 12 7 Q18 1 23 7"/></svg>
-      <svg class="gaivota gv2" viewBox="0 0 24 10"><path d="M1 7 Q6 1 12 7 Q18 1 23 7"/></svg>
-      <svg class="gaivota gv3" viewBox="0 0 24 10"><path d="M1 7 Q6 1 12 7 Q18 1 23 7"/></svg>
-    </div>
+  <section class="vitrine-topo vt-areia">
     <div class="vt-cartao">
       <span class="rotulo digitar" data-texto="Nossas propriedades">Nossas propriedades</span>
       <h1 class="dividir">Lugares que carregam histórias.</h1>
@@ -61,63 +49,6 @@
     </div>
   </section>
 
-  <div class="orla" aria-hidden="true">
-    <svg class="orla-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="og-agua" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#1497B3"/>
-          <stop offset=".35" stop-color="#1FAABF"/>
-          <stop offset=".62" stop-color="#3EC2C9" stop-opacity=".88"/>
-          <stop offset=".85" stop-color="#8EDCD2" stop-opacity=".55"/>
-          <stop offset="1" stop-color="#CFEFE3" stop-opacity=".3"/>
-        </linearGradient>
-        <linearGradient id="og-rasa" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#7FD8D0" stop-opacity="0"/>
-          <stop offset=".6" stop-color="#9FE2D6" stop-opacity=".45"/>
-          <stop offset="1" stop-color="#D9F3E8" stop-opacity=".25"/>
-        </linearGradient>
-        <linearGradient id="og-molhada" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#8A6A42" stop-opacity=".38"/>
-          <stop offset=".55" stop-color="#9C7B50" stop-opacity=".2"/>
-          <stop offset="1" stop-color="#A88758" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="og-espuma" x="-5%" y="-40%" width="110%" height="180%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.035 0.22" numOctaves="2" seed="4" result="r"/>
-          <feDisplacementMap in="SourceGraphic" in2="r" scale="16" xChannelSelector="R" yChannelSelector="G"/>
-          <feGaussianBlur stdDeviation=".7"/>
-        </filter>
-        <filter id="og-renda" x="-5%" y="-60%" width="110%" height="220%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.06 0.3" numOctaves="3" seed="9" result="r"/>
-          <feColorMatrix in="r" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -6 3.4" result="buracos"/>
-          <feComposite in="SourceGraphic" in2="buracos" operator="in" result="renda"/>
-          <feDisplacementMap in="renda" in2="r" scale="10" xChannelSelector="R" yChannelSelector="G"/>
-        </filter>
-        <linearGradient id="og-brilho" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-      </defs>
-
-      <!-- areia molhada logo abaixo da linha da água -->
-      <path class="og-molhada" d="M0 150 C220 170 420 140 700 158 C980 176 1200 146 1440 160 V320 H0Z" fill="url(#og-molhada)"/>
-      <rect class="og-brilho-areia" x="0" y="175" width="1440" height="20" fill="url(#og-brilho)" opacity=".35"/>
-
-      <!-- corpo do mar (respira devagar) -->
-      <g class="og-corpo">
-        <path d="M0 0 H1440 V150 C1300 166 1180 140 1020 154 C860 168 760 138 600 150 C430 163 300 140 160 152 C90 158 40 150 0 154Z" fill="url(#og-agua)"/>
-        <path d="M0 154 C40 150 90 158 160 152 C300 140 430 163 600 150 C760 138 860 168 1020 154 C1180 140 1300 166 1440 150" fill="none" stroke="#fff" stroke-width="18" opacity=".35" filter="url(#og-renda)"/>
-        <path d="M0 154 C40 150 90 158 160 152 C300 140 430 163 600 150 C760 138 860 168 1020 154 C1180 140 1300 166 1440 150" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".92" filter="url(#og-espuma)"/>
-      </g>
-
-      <!-- ondinha que sobe pela areia e volta -->
-      <g class="og-onda og-onda--1">
-        <path d="M0 120 H1440 V178 C1320 194 1190 170 1040 186 C880 202 760 172 610 184 C450 197 320 174 170 188 C100 194 40 186 0 190Z" fill="url(#og-rasa)"/>
-        <path d="M0 190 C40 186 100 194 170 188 C320 174 450 197 610 184 C760 172 880 202 1040 186 C1190 170 1320 194 1440 178" fill="none" stroke="#fff" stroke-width="14" opacity=".4" filter="url(#og-renda)"/>
-        <path d="M0 190 C40 186 100 194 170 188 C320 174 450 197 610 184 C760 172 880 202 1040 186 C1190 170 1320 194 1440 178" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" opacity=".85" filter="url(#og-espuma)"/>
-      </g>
-      <g class="og-onda og-onda--2">
-        <path d="M0 130 H1440 V196 C1330 210 1200 190 1060 204 C900 220 780 192 640 202 C480 214 340 194 200 206 C120 212 50 204 0 208Z" fill="url(#og-rasa)" opacity=".8"/>
-        <path d="M0 208 C50 204 120 212 200 206 C340 194 480 214 640 202 C780 192 900 220 1060 204 C1200 190 1330 210 1440 196" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".75" filter="url(#og-espuma)"/>
-      </g>
-    </svg>
-  </div>
 
   <section class="vitrine" id="vitrine" aria-label="Acomodações">
       <a class="cartaz revelar" href="casa-amendoeiras.html" aria-label="Ver Casa Amendoeiras">
@@ -342,5 +273,6 @@
 <script src="cinema-global.js"></script>
 <script src="cine-vida.js?v=1"></script>
 <script src="acomodacoes.js?v=7"></script>
+<script src="caranguejos.js"></script>
 </body>
 </html>

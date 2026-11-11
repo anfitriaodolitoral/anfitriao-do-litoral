@@ -2820,3 +2820,9 @@ body.acom-branco .cartaz--prop { background: linear-gradient(150deg, #1E6E8C, #1
 .faq-resp p { overflow: hidden; margin: 0; padding: 0 22px; color: #4A5A63; font-size: 15.5px; line-height: 1.65; }
 .faq-item[open] .faq-resp p { padding-bottom: 20px; }
 @media (max-width: 760px) { .faq-item summary { padding: 17px 18px; font-size: 15.5px; } .faq-resp p { padding: 0 18px; } }
+/* hero no celular: quadro vertical 4:5 focado na prainha, sem ampliar a imagem */
+@media (max-width: 760px) {
+  .inicio .cine-canvas { height: 118vw; }
+  .inicio .cine-dica { top: calc(158px + 118vw + 10px); }
+}
+.faq-painel[hidden] { display: none !important; }

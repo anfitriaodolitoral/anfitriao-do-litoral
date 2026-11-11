@@ -3165,3 +3165,17 @@ body:has(.reserva-fixa) .som-bt { bottom: 92px; }
 .inicio .canal--whats strong, .inicio .canal--whats small, .inicio .canal--whats .canal-seta { color: #fff; }
 .inicio .canal--whats .canal-icone { background: rgb(255 255 255 / .2); color: #fff; }
 .inicio .canal--whats:hover { box-shadow: 0 18px 34px -16px rgb(37 211 102 / .7); }
+
+/* página 404 */
+body.pagina-404 { background: #fff; animation: none; }
+.e404 { min-height: 100svh; display: grid; place-content: center; justify-items: center; text-align: center; padding: 40px var(--gutter); }
+.e404-onda { width: min(340px, 70vw); height: auto; margin-bottom: 24px; animation: e404-boia 4s ease-in-out infinite alternate; }
+@keyframes e404-boia { from { transform: translateY(0) rotate(-1deg); } to { transform: translateY(-10px) rotate(1deg); } }
+.e404 .rotulo { color: #E36A4C; }
+.e404 h1 { font: 800 clamp(30px, 4.4vw, 56px)/1.08 "Plus Jakarta Sans", sans-serif; letter-spacing: -.035em; color: #14303F; margin: .2em 0 .35em; }
+.e404 p { color: #4A5A63; max-width: 460px; margin: 0 0 26px; font-size: 16.5px; }
+.e404-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.e404-bt { padding: 14px 22px; border-radius: 999px; border: 1px solid #DCE3E7; color: #14303F; text-decoration: none; font: 700 14.5px/1 "Plus Jakarta Sans", sans-serif; transition: transform .35s var(--ease), background .3s, color .3s; }
+.e404-bt:hover { transform: translateY(-2px); border-color: #14303F; }
+.e404-bt--cheio { background: #14303F; border-color: #14303F; color: #fff; }
+@media (prefers-reduced-motion: reduce) { .e404-onda { animation: none; } }

@@ -114,3 +114,17 @@
     marcar();
   }
 })();
+
+/* ── altura real do cabeçalho em --topo-h (o vídeo do hero no celular começa colado nele) ── */
+(() => {
+  const topo = document.querySelector(".topo");
+  if (!topo) return;
+  let pedido = false;
+  const medir = () => { pedido = false; document.documentElement.style.setProperty("--topo-h", Math.round(topo.getBoundingClientRect().bottom) + "px"); };
+  const agendar = () => { if (!pedido) { pedido = true; requestAnimationFrame(medir); } };
+  addEventListener("resize", agendar); addEventListener("scroll", agendar, { passive: true });
+  topo.addEventListener("transitionend", agendar);
+  if (window.ResizeObserver) new ResizeObserver(agendar).observe(topo);
+  if (document.fonts) document.fonts.ready.then(agendar);
+  medir();
+})();

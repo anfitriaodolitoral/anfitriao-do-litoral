@@ -3179,3 +3179,10 @@ body.pagina-404 { background: #fff; animation: none; }
 .e404-bt:hover { transform: translateY(-2px); border-color: #14303F; }
 .e404-bt--cheio { background: #14303F; border-color: #14303F; color: #fff; }
 @media (prefers-reduced-motion: reduce) { .e404-onda { animation: none; } }
+/* hero no celular: vídeo colado no cabeçalho, sem faixa branca em cima */
+@media (max-width: 760px) {
+  .inicio .cine-canvas { top: var(--topo-h, 82px); height: 118vw;
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 80%, transparent 97%); mask-image: linear-gradient(180deg, #000 0, #000 80%, transparent 97%); }
+  .inicio .cena-1 { top: calc(var(--topo-h, 82px) + 14px); }
+  .inicio .cine-dica { top: calc(var(--topo-h, 82px) + 118vw + 10px); }
+}

@@ -3040,3 +3040,34 @@ body.acom-branco .cartaz-ver span { display: inline-block; animation: ac-seta 2.
 @media (max-width: 760px) { .inicio .cine { height: 170vh; } }
 .inicio .ct-novo.toque .cinema-seta, .inicio .ct-novo:active .cinema-seta { background: #E36A4C; color: #fff; transform: none; }
 @media (max-width: 760px) { .ct-texto small { font-size: 10px; letter-spacing: .1em; white-space: nowrap; } .ct-texto > span { font-size: 21px; } }
+
+/* ══ 05 · Contato: fundo branco e entrada de cinema ══ */
+.inicio .contato { background: #fff !important; position: relative; overflow: hidden; }
+.inicio .contato::before, .inicio .contato::after { content: none !important; }
+.inicio .contato .rotulo { color: #E36A4C; }
+.inicio .contato h2 { color: #14303F; }
+.ct-onda { width: 110px; margin-bottom: 14px; }
+.ct-onda img { display: block; width: 100%; height: auto; clip-path: circle(0% at 30% 85%); opacity: 0; }
+.contato-info.visto .ct-onda img { animation: ab-logo-entra 1.8s cubic-bezier(.6,0,.2,1) .2s forwards; }
+/* canais: deslizam e sobem ao passar */
+.inicio .canal { transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s; }
+.inicio .canal:hover { transform: translateX(6px); box-shadow: 0 16px 30px -20px rgb(20 48 63 / .45); }
+.inicio .canal--whats { position: relative; overflow: hidden; }
+.inicio .canal--whats::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / .55) 50%, transparent 65%); transform: translateX(-120%); animation: ct-varre 4.5s ease-in-out 1.5s infinite; pointer-events: none; }
+@keyframes ct-varre { 0% { transform: translateX(-120%); } 40%, 100% { transform: translateX(120%); } }
+/* formulário: cartão que entra girando levemente e campos que acendem */
+.inicio .form-cartao { background: #fff; border: 1px solid #E6ECEF; box-shadow: 0 40px 80px -40px rgb(20 48 63 / .35); }
+.inicio .form-cartao.revelar { transform: translateY(50px) scale(.96); }
+.inicio .form-cartao.revelar.visto { transform: none; }
+.inicio .form .campo input, .inicio .form .campo textarea { transition: border-color .35s, box-shadow .35s, background .35s; }
+.inicio .form .campo input:focus, .inicio .form .campo textarea:focus { border-color: #1F4E6B; box-shadow: 0 0 0 4px rgb(31 78 107 / .1); background: #fff; }
+.inicio .form .campo { opacity: 0; transform: translateY(12px); }
+.inicio .form-cartao.visto .form .campo { animation: faq-entra .6s var(--ease) forwards; }
+.inicio .form-cartao.visto .form .campo:nth-child(2) { animation-delay: .1s; } .inicio .form-cartao.visto .form .campo:nth-child(3) { animation-delay: .18s; }
+.inicio .form-cartao.visto .form .campo:nth-child(4) { animation-delay: .26s; } .inicio .form-cartao.visto .form .campo:nth-child(5) { animation-delay: .34s; }
+.inicio .enviar { position: relative; overflow: hidden; }
+.inicio .enviar::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / .35) 50%, transparent 65%); transform: translateX(-120%); animation: ct-varre 3.8s ease-in-out 2s infinite; pointer-events: none; }
+.inicio .enviar:hover .enviar-seta { transform: translateX(5px); }
+.inicio .perfil label span { transition: background .35s, color .35s, transform .35s var(--ease); }
+.inicio .perfil label:active span { transform: scale(.95); }
+@media (prefers-reduced-motion: reduce) { .ct-onda img { clip-path: none; opacity: 1; } .inicio .form .campo { opacity: 1; transform: none; } }

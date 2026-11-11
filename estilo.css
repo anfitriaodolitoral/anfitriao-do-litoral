@@ -2596,3 +2596,13 @@ body:has(.vt-areia) {
 }
 .cg-cena { background: radial-gradient(circle 260px at var(--fx, 50%) var(--fy, 50%), rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 45%, rgb(30 20 10 / .5) 100%); }
 .caranguejo.na-frente .cg-balao { font-size: 8px; padding: 6px 9px; }
+/* computador: conjunto ancorado na borda de cima do rodapé (pés encostando), centralizado */
+@media (min-width: 861px) {
+  .praia-grade--2, .praia-palco { position: static; }
+  .praia-palco .praia-texto { position: relative; z-index: 2; }
+  .praia { padding-bottom: 290px; }
+  .praia-gs { left: calc(50% - 280px + 121px); bottom: -6px; }
+  .cadeira-frente.cadeira-frente--2 { left: calc(50% - 280px + 130px); bottom: -6px; }
+  .cadeira-frente:not(.cadeira-frente--2) { left: calc(50% - 280px + 242px); bottom: -6px; }
+  .cooler { left: calc(50% - 280px + 356px); bottom: -5px; }
+}

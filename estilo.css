@@ -1666,3 +1666,17 @@ body:has(.vitrine-topo) .rodape-painel { background: rgb(255 255 255 / .6); bord
 @media (prefers-reduced-motion: reduce) {
   .inicio .filme .filme-cartao > * { transform: none; opacity: 1; }
 }
+
+/* Acomodações emenda sem costura: começa no branco da sombra do hero e termina no branco da "Nossa história" */
+.inicio .cinema { background: #fff; }
+.inicio .cinema::before { background: linear-gradient(180deg, #fff 0%, #EEF5F8 8%, #D6E9F3 20%, #B9DAEE 40%, #C4E0F0 62%, #E3F0F6 84%, #fff 100%); }
+/* o branco do pé do vídeo fica POR CIMA da vinheta: some a linha cinza na emenda */
+.inicio .cine-vinheta {
+  background:
+    linear-gradient(to bottom, transparent 74%, rgb(255 255 255 / .85) 93%, #fff 100%),
+    radial-gradient(120% 90% at 50% 45%, transparent 62%, rgb(10 28 40 / .18) 100%);
+}
+@media (max-width: 760px) {
+  .inicio .cena-3 { bottom: calc(30px + env(safe-area-inset-bottom, 0px)); }
+  .inicio .cena-3 .painel--cine { box-shadow: 0 0 0 1px rgb(0 0 0 / .05), 0 10px 22px -10px rgb(4 20 32 / .28); }
+}

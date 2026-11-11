@@ -2917,3 +2917,17 @@ body.acom-branco .cartaz.revelar { transform: translateY(70px) rotateX(10deg) sc
 .inicio .cinema-todas:hover .cinema-seta { background: #fff; color: #E36A4C; }
 .inicio .cinema-todas .cinema-seta { animation: ac-seta 2.4s ease-in-out infinite; }
 @keyframes ac-seta { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+/* card do anfitrião: computador como antes (coluna esquerda); celular abaixo de "Mais rentabilidade" */
+@media (min-width: 761px) { .inicio .historia-grade { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); max-width: 1120px; } }
+@media (max-width: 760px) {
+  .inicio .historia-grade { display: flex; flex-direction: column; }
+  .inicio .historia-grade > .anfitriao-card { order: 2; margin: 34px auto 0; max-width: 280px; padding: 14px 16px 12px; }
+  .inicio .anfitriao-card .avatar { width: 58px !important; height: 58px !important; margin-bottom: 6px; }
+  .inicio .anfitriao-card .avatar-selo { width: 20px; height: 20px; right: -4px; bottom: 0; }
+  .inicio .anfitriao-card .anfitriao-nome { font-size: 17px !important; }
+  .inicio .anfitriao-card .anfitriao-papel { font-size: 11px !important; }
+  .inicio .anfitriao-card .anfitriao-dados li { padding: 5px 0; }
+  .inicio .anfitriao-card .anfitriao-dados strong { font-size: 12.5px !important; }
+  .inicio .anfitriao-card .anfitriao-dados span { font-size: 10px !important; }
+  .inicio .anfitriao-card .anfitriao-botao { margin-top: 10px; padding: 9px 12px; font-size: 12.5px; }
+}

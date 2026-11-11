@@ -192,6 +192,10 @@
 /* ── Cartazes: estrelinhas do Airbnb (só imóveis com nota real), inclinação ao passar o mouse ── */
 (() => {
   const NOTAS = {
+    "casa-amendoeiras.html": { nota: "4,94", av: "102 avaliações", selo: "Preferido dos hóspedes" },
+    "estilo-e-conforto.html": { nota: "5,0", av: "61 avaliações", selo: "Preferido dos hóspedes" },
+    "casa-ferraz.html": { nota: "5,0", av: "2 avaliações" },
+    "apartamento-meia-praia.html": { nota: "5,0", av: "14 avaliações", selo: "Preferido dos hóspedes" },
     "apartamento-estiloso.html": { nota: "5,0", av: "9 avaliações" },
     "minicasa-1.html": { nota: "5,0", av: "8 avaliações", selo: "Preferido dos hóspedes" },
     "minicasa-2.html": { nota: "5,0", av: "1 avaliação" },

@@ -3138,3 +3138,19 @@ body.acom-branco .cartaz-ver span { display: inline-block; animation: ac-seta 2.
 .ver-todas-mini:hover i { background: #E36A4C; transform: rotate(-45deg); }
 .ver-todas-mini:active { transform: scale(.97); }
 @media (max-width: 760px) { .ver-todas-mini { margin-top: 20px; } }
+
+/* botão de som (todas as páginas) */
+.som-bt { position: fixed; left: 18px; bottom: 22px; z-index: 60; display: inline-flex; align-items: center; gap: 8px; height: 44px; min-width: 44px; padding: 0 12px;
+  border: 1px solid #DCE3E7; border-radius: 999px; background: rgb(255 255 255 / .92); color: #14303F; cursor: pointer;
+  font: 700 13px/1 "Plus Jakarta Sans", sans-serif; box-shadow: 0 10px 24px -14px rgb(20 48 63 / .5); backdrop-filter: blur(8px);
+  opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease), background .3s, color .3s; }
+.som-bt.visivel { opacity: 1; transform: none; }
+.som-bt svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.som-bt.convite { background: #14303F; color: #fff; border-color: #14303F; animation: som-pulso 2.2s ease-out infinite; }
+.som-bt.convite svg { animation: som-onda .9s ease-in-out infinite alternate; }
+.som-bt.mudo { color: #8A979E; }
+@keyframes som-pulso { 0% { box-shadow: 0 0 0 0 rgb(20 48 63 / .45); } 100% { box-shadow: 0 0 0 14px rgb(20 48 63 / 0); } }
+@keyframes som-onda { to { transform: scale(1.15); } }
+@media (max-width: 760px) { .som-bt { left: 14px; bottom: 18px; } }
+body:has(.reserva-fixa) .som-bt { bottom: 92px; }
+@media (prefers-reduced-motion: reduce) { .som-bt.convite, .som-bt.convite svg { animation: none; } }

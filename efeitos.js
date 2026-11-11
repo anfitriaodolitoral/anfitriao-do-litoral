@@ -100,7 +100,7 @@
 /* ── Página inicial: carrosséis de deslizar com pontos e "Ler a história" ── */
 (() => {
   const celular = matchMedia("(max-width: 760px)");
-  document.querySelectorAll(".inicio .cuidados, .inicio .etapas").forEach((trilho) => {
+  document.querySelectorAll(".inicio .cuidados, .inicio .etapas, .inicio .filmes").forEach((trilho) => {
     const itens = [...trilho.children];
     const pontos = document.createElement("div");
     pontos.className = "pontos";

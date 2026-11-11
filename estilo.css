@@ -2859,3 +2859,7 @@ body.acom-branco .cartaz.revelar { transform: translateY(70px) rotateX(10deg) sc
 @media (max-width: 860px) { .ab-logo { width: 94vw; margin-top: 18px; } }
 @media (prefers-reduced-motion: reduce) { .ab-brilho { opacity: 1; } .sp, .ab-reflexo::before { display: none; } .ab-logo { transform: none; } }
 .ab-brilho { top: 52%; width: 52%; }
+/* cena 2 do hero: texto centralizado no card */
+.inicio .cena-3 .destaque { text-align: center; }
+@media (max-width: 760px) { .inicio .barra-cine { align-items: center; text-align: center; } }
+.inicio .cine.andou .cine-dica { opacity: 0 !important; }

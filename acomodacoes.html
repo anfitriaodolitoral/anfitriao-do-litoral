@@ -16,7 +16,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilo.css?v=acom3">
+  <link rel="preload" as="image" href="assets/img/por-do-sol.webp" media="(min-width: 761px)">
+  <link rel="preload" as="image" href="assets/img/por-do-sol-celular.webp" media="(max-width: 760px)">
+  <link rel="stylesheet" href="estilo.css?v=acom6">
 </head>
 <body class="pagina-interna">
 
@@ -36,16 +38,14 @@
 <main>
   <section class="vitrine-topo vt-cine vt-pds">
     <div class="ceu" aria-hidden="true">
-      <span class="nuvem nv1"></span><span class="nuvem nv2"></span><span class="nuvem nv3"></span>
+      <picture><source media="(max-width: 760px)" srcset="assets/img/por-do-sol-celular.webp"><img class="vt-foto" src="assets/img/por-do-sol.webp" alt="" fetchpriority="high"></picture>
+      <span class="vt-brilho"></span>
+      <div class="cintilar"></div>
+      <span class="vt-anoitecer"></span>
+      <span class="vt-grao"></span>
       <svg class="gaivota gv1" viewBox="0 0 24 10"><path d="M1 7 Q6 1 12 7 Q18 1 23 7"/></svg>
       <svg class="gaivota gv2" viewBox="0 0 24 10"><path d="M1 7 Q6 1 12 7 Q18 1 23 7"/></svg>
       <svg class="gaivota gv3" viewBox="0 0 24 10"><path d="M1 7 Q6 1 12 7 Q18 1 23 7"/></svg>
-      <span class="vt-sol"></span>
-      <div class="vt-mar">
-        <span class="pds-reflexo"></span>
-        <div class="cintilar"></div>
-        <div class="faixa-destinos"><div class="faixa-trilho"><span>Garopaba</span><i>✦</i><span>Praia do Siriú</span><i>✦</i><span>Mariscal</span><i>✦</i><span>Bombinhas</span><i>✦</i><span>Itapema</span><i>✦</i><span>Meia Praia</span><i>✦</i><span>Garopaba</span><i>✦</i><span>Praia do Siriú</span><i>✦</i><span>Mariscal</span><i>✦</i><span>Bombinhas</span><i>✦</i><span>Itapema</span><i>✦</i><span>Meia Praia</span><i>✦</i></div></div>
-      </div>
     </div>
     <div class="vt-cartao">
       <span class="rotulo digitar" data-texto="Nossas propriedades">Nossas propriedades</span>
@@ -203,6 +203,6 @@
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="cinema-global.js"></script>
 <script src="cine-vida.js?v=1"></script>
-<script src="acomodacoes.js?v=2"></script>
+<script src="acomodacoes.js?v=3"></script>
 </body>
 </html>

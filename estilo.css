@@ -2053,3 +2053,51 @@ body:has(.vitrine-topo) .rodape-painel { background: rgb(255 255 255 / .6); bord
 @media (prefers-reduced-motion: reduce) {
   .vt-pds .vt-sol { opacity: 1; transform: none; }
 }
+
+/* ══ Abertura realista: foto do pôr do sol com luz, brilho na água, gaivotas e grão de filme ══ */
+.vt-pds { --hz: 66%; --fh: 132%; }
+.vitrine-topo.vt-pds > .ceu { background: #E9A27C; }
+.vt-foto {
+  position: absolute; left: 0; width: 100%; height: var(--fh); top: calc(var(--hz) - var(--fh) * .5);
+  object-fit: cover; object-position: 50% 50%; transform-origin: 50% 50%;
+  translate: 0 calc(var(--rol, 0) * 6%); animation: vt-zoom 26s ease-out both;
+}
+@keyframes vt-zoom { from { scale: 1.1; } to { scale: 1; } }
+.vt-brilho {
+  position: absolute; left: 50%; top: calc(var(--hz) - var(--fh) * .045); width: 420px; height: 420px; margin: -210px 0 0 -210px;
+  border-radius: 50%; mix-blend-mode: screen; pointer-events: none;
+  background: radial-gradient(circle, rgb(255 236 190 / .55) 0%, rgb(255 200 140 / .25) 30%, transparent 62%);
+  translate: 0 calc(var(--rol, 0) * 6%); animation: vt-brilha 5s ease-in-out infinite alternate;
+}
+@keyframes vt-brilha { from { scale: .85; opacity: .7; } to { scale: 1.12; opacity: 1; } }
+.vt-pds .cintilar { position: absolute; left: 0; right: 0; top: calc(var(--hz) + 1%); height: 30%; bottom: auto; z-index: 1; translate: 0 calc(var(--rol, 0) * 6%); }
+.vt-pds .cintilar i { height: 1.5px; box-shadow: 0 0 6px 1px rgb(255 230 170 / .9); }
+.vt-anoitecer { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgb(40 30 70 / .75), rgb(90 40 60 / .35) 60%, rgb(20 30 60 / .5)); opacity: calc(var(--rol, 0) * .7); }
+.vt-grao {
+  position: absolute; inset: -50%; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  animation: vt-grao 1s steps(4) infinite;
+}
+@keyframes vt-grao { 0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } }
+.vitrine-topo.vt-pds > .ceu::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; pointer-events: none; background: linear-gradient(180deg, rgb(90 157 208 / 0), rgb(90 157 208 / 1)); }
+.vt-pds .gaivota { z-index: 1; stroke: rgb(40 25 20 / .6); }
+.vt-pds .gv1 { top: 30%; } .vt-pds .gv2 { top: 34%; } .vt-pds .gv3 { top: 27%; }
+@media (max-width: 760px) {
+  .vt-pds { --hz: 77%; --fh: 150%; }
+  .vt-brilho { width: 260px; height: 260px; margin: -130px 0 0 -130px; top: calc(var(--hz) - var(--fh) * .045); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vt-foto, .vt-brilho, .vt-grao { animation: none; }
+}
+/* enquadramento: horizonte abaixo do cartão; no celular a foto menos ampliada, topo fundido no céu */
+.vitrine-topo.vt-pds > .ceu { background: linear-gradient(180deg, #D8BFB6, #E3B7A0 30%, #E9A27C 70%); }
+.vt-foto { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14%); mask-image: linear-gradient(180deg, transparent 0, #000 14%); }
+.vt-pds { --hz: 73%; --fh: 146%; }
+.vt-pds .vt-cartao { width: min(700px, 100%); padding: clamp(22px, 2.8vw, 34px) clamp(20px, 3vw, 40px); }
+.vt-pds .vt-cartao h1 { font-size: clamp(32px, 3.9vw, 54px); }
+.vt-pds .vt-cartao .surgir { font-size: 15px; }
+@media (max-width: 760px) {
+  .vt-pds { --hz: 76%; --fh: 104%; }
+  .vt-brilho { width: 180px; height: 180px; margin: -90px 0 0 -90px; opacity: .7; }
+}
+@media (max-width: 760px) { .vt-brilho { display: none; } }

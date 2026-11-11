@@ -2931,3 +2931,8 @@ body.acom-branco .cartaz.revelar { transform: translateY(70px) rotateX(10deg) sc
   .inicio .anfitriao-card .anfitriao-dados span { font-size: 10px !important; }
   .inicio .anfitriao-card .anfitriao-botao { margin-top: 10px; padding: 9px 12px; font-size: 12.5px; }
 }
+/* cartazes de acomodações: entrada reta (sem giro 3D) e nítidos depois de aparecer */
+body.acom-branco .vitrine { perspective: none; }
+body.acom-branco .cartaz.revelar { transform: translateY(50px); transform-origin: 50% 50%; }
+body.acom-branco .cartaz.revelar.visto { transform: none; filter: none; }
+body.acom-branco .cartaz { backface-visibility: hidden; }

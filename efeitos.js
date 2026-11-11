@@ -144,3 +144,19 @@
     b.querySelector("span").textContent = aberto ? "Mostrar menos" : "Ler a história completa";
   }));
 })();
+
+/* ── Perguntas frequentes: abas por perfil e uma resposta aberta por vez ── */
+(() => {
+  const faq = document.querySelector(".faq");
+  if (!faq) return;
+  const abas = [...faq.querySelectorAll(".faq-aba")], paineis = [...faq.querySelectorAll(".faq-painel")];
+  abas.forEach((a) => a.addEventListener("click", () => {
+    abas.forEach((b) => { const on = b === a; b.classList.toggle("ativa", on); b.setAttribute("aria-selected", String(on)); });
+    paineis.forEach((p) => (p.hidden = p.dataset.faq !== a.dataset.faq));
+  }));
+  faq.querySelectorAll(".faq-item").forEach((d) => d.addEventListener("toggle", () => {
+    if (d.open) d.parentElement.querySelectorAll(".faq-item[open]").forEach((o) => o !== d && (o.open = false));
+  }));
+  const primeira = faq.querySelector(".faq-painel:not([hidden]) .faq-item");
+  if (primeira) primeira.open = true;
+})();

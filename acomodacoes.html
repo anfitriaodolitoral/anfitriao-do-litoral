@@ -11,14 +11,14 @@
   <meta property="og:title" content="Aluguel por Temporada em Garopaba | Acomodações | Anfitrião do Litoral">
   <meta property="og:description" content="Casas e apartamentos para aluguel por temporada em Garopaba, Mariscal e Itapema administrados pelo Anfitrião do Litoral. Escolha sua acomodação e faça sua reserva.">
   <meta property="og:image" content="assets/imoveis/amendoeiras/06.webp">
-  <meta name="theme-color" content="#F4F0E8">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilo.css?v=areia17">
+  <link rel="stylesheet" href="estilo.css?v=logo3">
 </head>
-<body class="pagina-interna">
+<body class="pagina-interna acom-branco">
 
 <header class="topo">
   <a href="index.html" class="marca" aria-label="Anfitrião do Litoral, página inicial">
@@ -34,12 +34,11 @@
 </header>
 
 <main>
-  <section class="vitrine-topo vt-areia">
-    <div class="vt-cartao">
+  <section class="ab-topo">
+    <div class="ab-texto">
       <span class="rotulo digitar" data-texto="Nossas propriedades">Nossas propriedades</span>
       <h1 class="dividir">Lugares que carregam histórias.</h1>
       <p class="giro-linha">Casas e apartamentos para temporada em <span class="giro" aria-live="off"><span class="giro-palavra ativa">Garopaba</span><span class="giro-palavra">Mariscal</span><span class="giro-palavra">Itapema</span></span></p>
-      <p class="surgir">Cada propriedade possui sua própria personalidade, detalhes e histórias que tornam cada estadia única.</p>
       <div class="filtros" role="group" aria-label="Filtrar acomodações por cidade">
         <button type="button" class="filtro ativo" data-cidade="todas" aria-pressed="true">Todas</button>
         <button type="button" class="filtro" data-cidade="garopaba" aria-pressed="false">Garopaba</button>
@@ -47,8 +46,37 @@
         <button type="button" class="filtro" data-cidade="itapema" aria-pressed="false">Itapema</button>
       </div>
     </div>
+    <svg class="ab-cena ab-cena--logo" viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path class="tr lg-arco" pathLength="1" d="M478 318 A246 246 0 0 1 962 300" fill="none" stroke="#1F4E6B" stroke-width="5" stroke-linecap="round"/>
+      <g class="lg-onda" fill="#1F4E6B">
+        <path class="lg-c lg-c1" d="M410 318 C510 308 556 246 598 200 C640 154 704 140 738 172 C756 190 750 218 726 222 C738 200 722 180 696 184 C658 190 638 236 606 270 C574 304 512 324 410 318Z"/>
+        <path class="lg-c lg-c2" d="M500 318 C566 310 600 262 628 228 C650 200 686 198 694 214 C674 208 656 220 640 244 C616 280 584 314 500 318Z"/>
+        <path class="lg-c lg-c3" d="M574 318 C622 312 646 280 666 254 C680 236 700 236 706 248 C690 246 678 258 666 274 C648 298 624 318 574 318Z"/>
+        <path class="lg-c lg-c4" d="M300 318 C360 310 404 296 446 274 C426 300 386 318 300 324Z"/>
+        <path class="lg-c lg-c5" d="M232 322 C290 314 330 308 372 296 C350 314 310 324 232 328Z"/>
+      </g>
+      <g class="lg-rastros" fill="#1F4E6B">
+        <path class="lg-r lg-r1" d="M640 300 C730 318 820 306 930 312 C1020 318 1110 306 1230 316 C1110 314 1030 324 930 322 C820 322 730 322 640 300Z"/>
+        <path class="lg-r lg-r2" d="M720 322 C820 334 930 326 1040 330 C1150 334 1260 326 1400 332 C1260 334 1150 340 1040 338 C930 338 820 338 720 322Z"/>
+        <path class="lg-r lg-r3" d="M40 332 C150 326 260 330 380 326 C300 334 180 338 40 336Z"/>
+      </g>
+      <g class="lg-aves" fill="#1F4E6B">
+        <path class="lg-ave lg-ave1" d="M0 10 C10 2 20 2 30 12 C36 4 46 -2 60 2 C48 4 40 10 34 20 C26 10 16 6 0 10Z" transform="translate(820 120)"/>
+        <path class="lg-ave lg-ave2" d="M0 10 C10 2 20 2 30 12 C36 4 46 -2 60 2 C48 4 40 10 34 20 C26 10 16 6 0 10Z" transform="translate(890 176) scale(.72)"/>
+        <path class="lg-ave lg-ave3" d="M0 10 C10 2 20 2 30 12 C36 4 46 -2 60 2 C48 4 40 10 34 20 C26 10 16 6 0 10Z" transform="translate(300 150) scale(.55)"/>
+      </g>
+    </svg>
   </section>
 
+  <div class="ab-objetos" aria-hidden="true">
+    <svg class="obj" data-v=".12" style="left:3%;top:120vh;width:62px" viewBox="0 0 64 64"><path class="tr" pathLength="1" d="M32 58 C14 56 6 40 9 26 C12 13 24 8 32 8 C40 8 52 13 55 26 C58 40 50 56 32 58Z M32 58 L32 10 M32 58 L22 12 M32 58 L42 12 M32 58 L13 20 M32 58 L51 20"/></svg>
+    <svg class="obj" data-v="-.1" style="right:3%;top:150vh;width:58px" viewBox="0 0 64 64"><path class="tr" pathLength="1" d="M32 5 C35 18 39 24 51 26 C63 28 62 31 52 37 C44 42 44 47 47 59 C41 62 37 55 32 51 C27 55 23 62 17 59 C20 47 20 42 12 37 C2 31 1 28 13 26 C25 24 29 18 32 5Z"/></svg>
+    <svg class="obj" data-v=".16" style="left:4%;top:230vh;width:56px" viewBox="0 0 64 64"><path class="tr" pathLength="1" d="M18 6 C26 6 28 16 27 30 C26 46 24 58 18 58 C12 58 10 46 9 30 C8 16 10 6 18 6Z M46 8 C54 8 56 18 55 32 C54 48 52 60 46 60 C40 60 38 48 37 32 C36 18 38 8 46 8Z M11 22 Q18 30 25 22 M39 24 Q46 32 53 24"/></svg>
+    <svg class="obj" data-v="-.14" style="right:4%;top:280vh;width:70px" viewBox="0 0 80 40"><path class="tr" pathLength="1" d="M4 14 H76 M8 14 C8 30 14 34 22 34 C30 34 34 28 34 14 M46 14 C46 28 50 34 58 34 C66 34 72 30 72 14 M34 18 Q40 14 46 18"/></svg>
+    <svg class="obj" data-v=".1" style="left:3%;top:340vh;width:66px" viewBox="0 0 64 64"><path class="tr" pathLength="1" d="M6 30 Q32 2 58 30 Q51 26 45 30 Q38 25 32 30 Q26 25 19 30 Q13 26 6 30Z M32 30 L36 60 M32 6 V30"/></svg>
+    <svg class="obj" data-v="-.12" style="right:3%;top:400vh;width:56px" viewBox="0 0 64 64"><path class="tr" pathLength="1" d="M14 26 H50 L46 58 H18 Z M14 26 C14 16 24 12 32 12 C40 12 50 16 50 26 M38 4 L34 26 M44 6 C40 10 38 10 34 8"/></svg>
+    <svg class="obj" data-v=".14" style="left:4%;top:460vh;width:70px" viewBox="0 0 80 48"><path class="tr" pathLength="1" d="M4 40 C12 18 30 8 46 10 C60 12 70 22 66 32 C62 40 50 40 46 32 C43 26 48 20 54 22"/></svg>
+  </div>
 
   <section class="vitrine" id="vitrine" aria-label="Acomodações">
       <a class="cartaz revelar" href="casa-amendoeiras.html" aria-label="Ver Casa Amendoeiras">
@@ -148,108 +176,16 @@
       </a>
   </section>
 
-  <section class="praia">
-    <div class="achados" aria-hidden="true">
-      <span class="achado achado--praia" data-tipo="estrela" data-lado="left" data-d="6" style="left:6%;top:12%;width:40px;--giro:18deg"><svg viewBox="0 0 60 60"><path d="M30 3 C33 14 36 20 46 22 C57 24 57 27 48 32 C40 37 40 41 43 52 C45 59 41 59 34 53 C30 49 28 49 23 53 C16 59 13 58 16 51 C20 41 19 37 11 32 C2 27 3 24 14 22 C24 20 27 14 30 3Z" fill="#E8834E"/><g fill="#F6B07E"><circle cx="30" cy="14" r="1.6"/><circle cx="30" cy="22" r="1.6"/><circle cx="44" cy="27" r="1.6"/><circle cx="38" cy="29" r="1.6"/><circle cx="16" cy="27" r="1.6"/><circle cx="22" cy="29" r="1.6"/><circle cx="40" cy="46" r="1.6"/><circle cx="35" cy="39" r="1.6"/><circle cx="20" cy="46" r="1.6"/><circle cx="25" cy="39" r="1.6"/></g><circle cx="30" cy="31" r="3" fill="#D46A37"/></svg></span>
-      <span class="achado achado--praia" data-tipo="conchinha" data-lado="right" data-d="8" style="right:8%;top:8%;width:28px;--giro:-12deg"><svg viewBox="0 0 40 30"><path d="M20 28 C8 27 3 18 6 11 C9 4 31 4 34 11 C37 18 32 27 20 28Z" fill="#F7E6DA"/><path d="M20 28 L13 7 M20 28 L20 5 M20 28 L27 7" stroke="#E0B9A4" stroke-width="1.3"/></svg></span>
-      <span class="achado achado--praia" data-tipo="buzio" data-lado="right" data-d="4" style="right:4%;top:60%;width:40px;--giro:-20deg"><svg viewBox="0 0 60 60"><path d="M10 50 C8 30 22 10 46 6 C52 5 54 10 50 14 C44 20 46 30 40 40 C34 50 18 56 10 50Z" fill="#EBD2B4"/><path d="M14 46 C22 40 30 30 34 18 M20 50 C28 44 36 34 40 22 M12 38 C20 32 26 24 30 14" stroke="#C9A27E" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M46 6 C52 5 54 10 50 14 C47 12 45 9 46 6Z" fill="#B98B66"/></svg></span>
-      <span class="achado achado--praia" data-tipo="pegadas" data-lado="left" data-d="40" style="left:40%;top:70%;width:36px;--giro:-20deg"><svg viewBox="0 0 50 90"><g fill="#B99467" opacity=".55"><ellipse cx="14" cy="62" rx="7" ry="11"/><circle cx="8" cy="47" r="2.2"/><circle cx="12" cy="45" r="2"/><circle cx="16" cy="45" r="2"/><circle cx="20" cy="47" r="1.8"/><ellipse cx="36" cy="28" rx="7" ry="11"/><circle cx="30" cy="13" r="2.2"/><circle cx="34" cy="11" r="2"/><circle cx="38" cy="11" r="2"/><circle cx="42" cy="13" r="1.8"/></g></svg></span>
-      <span class="achado achado--praia" data-tipo="vieira" data-lado="left" data-d="3" style="left:3%;top:84%;width:34px;--giro:8deg"><svg viewBox="0 0 60 56"><path d="M30 52 C12 50 3 34 6 20 C9 8 22 3 30 3 C38 3 51 8 54 20 C57 34 48 50 30 52Z" fill="#F3D3BE"/><g stroke="#D9A88A" stroke-width="1.6" fill="none"><path d="M30 52 L30 5"/><path d="M30 52 L20 7"/><path d="M30 52 L40 7"/><path d="M30 52 L11 13"/><path d="M30 52 L49 13"/><path d="M30 52 L6 24"/><path d="M30 52 L54 24"/></g><path d="M22 50 L30 56 L38 50Z" fill="#E7B99C"/></svg></span>
-    </div>
-    <div class="beira" aria-hidden="true">
-      <svg class="lingua l1" viewBox="0 0 1440 120" preserveAspectRatio="none"><defs><linearGradient id="raso" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A6E4D6"/><stop offset=".45" stop-color="#A6E4D6"/><stop offset="1" stop-color="#B9EADC" stop-opacity=".55"/></linearGradient></defs><path fill="url(#raso)" d="M0 0 H1440 V62 C1340 78 1250 96 1130 84 C1010 72 930 104 800 98 C680 92 600 70 470 82 C350 94 250 108 140 92 C80 84 40 76 0 80 Z"/></svg>
-      <svg class="espuma s1" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 80 C40 76 80 84 140 92 C250 108 350 94 470 82 C600 70 680 92 800 98 C930 104 1010 72 1130 84 C1250 96 1340 78 1440 62"/></svg>
-      <svg class="lingua l2" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 0 H1440 V48 C1320 60 1220 70 1100 62 C980 54 900 80 760 74 C640 68 560 52 430 60 C320 67 220 78 120 68 C70 63 30 56 0 58 Z"/></svg>
-      <svg class="espuma s2" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 58 C30 56 70 63 120 68 C220 78 320 67 430 60 C560 52 640 68 760 74 C900 80 980 54 1100 62 C1220 70 1320 60 1440 48"/></svg>
-    </div>
-
-    <div class="praia-grade praia-grade--2">
-      <div class="praia-palco">
-        <div class="praia-gs" aria-hidden="true">
-          <span class="gs-sombra"></span>
-          <svg class="guarda-sol" viewBox="0 0 320 360">
-            <defs>
-              <clipPath id="gs-lona"><path d="M18 128 Q160 -6 302 128 Q284 140 266 128 Q248 142 230 128 Q212 142 194 128 Q177 142 160 128 Q143 142 126 128 Q108 142 90 128 Q72 142 54 128 Q36 140 18 128Z"/></clipPath>
-              <radialGradient id="gs-luz" cx="35%" cy="25%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></radialGradient>
-              <linearGradient id="gs-haste" x1="0" x2="1"><stop offset="0" stop-color="#C9A27A"/><stop offset=".5" stop-color="#F0D9B8"/><stop offset="1" stop-color="#9C7550"/></linearGradient>
-            </defs>
-            <path d="M160 40 L166 352" stroke="url(#gs-haste)" stroke-width="7" stroke-linecap="round"/>
-            <g class="gs-lona">
-              <g clip-path="url(#gs-lona)">
-                <rect x="0" y="0" width="320" height="150" fill="#FBF6EE"/>
-                <path d="M160 18 L18 140 L54 140Z M160 18 L90 140 L126 140Z M160 18 L160 140 L194 140Z M160 18 L230 140 L266 140Z" fill="#E36A4C"/>
-                <rect x="0" y="0" width="320" height="150" fill="url(#gs-luz)"/>
-              </g>
-              <path d="M18 128 Q36 140 54 128 Q72 142 90 128 Q108 142 126 128 Q143 142 160 128 Q177 142 194 128 Q212 142 230 128 Q248 142 266 128 Q284 140 302 128" fill="none" stroke="#C9553B" stroke-width="2" opacity=".55"/>
-              <circle cx="160" cy="18" r="7" fill="#C9A27A"/>
-            </g>
-          </svg>
-        </div>
-
-        <svg class="cadeira-frente" viewBox="0 0 170 180" aria-hidden="true">
-          <defs>
-            <pattern id="cf-listras" width="20" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#1FA3B8"/><rect x="10" width="10" height="10" fill="#F8F3EA"/></pattern>
-            <linearGradient id="cf-sombra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
-            <linearGradient id="cf-madeira" x1="0" x2="1"><stop offset="0" stop-color="#A57B50"/><stop offset=".5" stop-color="#D2AA7C"/><stop offset="1" stop-color="#94693F"/></linearGradient>
-          </defs>
-          <ellipse cx="85" cy="170" rx="74" ry="8" fill="#6E4F2E" opacity=".25"/>
-          <!-- pés de trás -->
-          <path d="M44 34 L40 168 M126 34 L130 168" stroke="#8C6440" stroke-width="7" stroke-linecap="round"/>
-          <!-- encosto de lona -->
-          <path d="M46 34 H124 L120 108 H50 Z" fill="url(#cf-listras)"/>
-          <path d="M46 34 H124 L120 108 H50 Z" fill="url(#cf-sombra)"/>
-          <path d="M40 30 H130" stroke="url(#cf-madeira)" stroke-width="9" stroke-linecap="round"/>
-          <!-- assento em perspectiva -->
-          <path d="M50 108 H120 L138 132 H32 Z" fill="url(#cf-listras)" opacity=".92"/>
-          <path d="M50 108 H120 L138 132 H32 Z" fill="#000" opacity=".1"/>
-          <path d="M30 133 H140" stroke="url(#cf-madeira)" stroke-width="7" stroke-linecap="round"/>
-          <!-- braços -->
-          <path d="M24 98 H50 M120 98 H146" stroke="url(#cf-madeira)" stroke-width="7" stroke-linecap="round"/>
-          <path d="M28 100 L32 132 M142 100 L138 132" stroke="#9A7046" stroke-width="5" stroke-linecap="round"/>
-          <!-- pés da frente -->
-          <path d="M33 133 L26 170 M137 133 L144 170" stroke="url(#cf-madeira)" stroke-width="7" stroke-linecap="round"/>
-        </svg>
-        <svg class="cadeira-frente cadeira-frente--2" viewBox="0 0 170 180" aria-hidden="true">
-          <defs>
-            <pattern id="cf2-listras" width="20" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#E36A4C"/><rect x="10" width="10" height="10" fill="#F8F3EA"/></pattern>
-            <linearGradient id="cf2-sombra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
-            <linearGradient id="cf2-madeira" x1="0" x2="1"><stop offset="0" stop-color="#A57B50"/><stop offset=".5" stop-color="#D2AA7C"/><stop offset="1" stop-color="#94693F"/></linearGradient>
-          </defs>
-          <ellipse cx="85" cy="170" rx="74" ry="8" fill="#6E4F2E" opacity=".25"/>
-          <!-- pés de trás -->
-          <path d="M44 34 L40 168 M126 34 L130 168" stroke="#8C6440" stroke-width="7" stroke-linecap="round"/>
-          <!-- encosto de lona -->
-          <path d="M46 34 H124 L120 108 H50 Z" fill="url(#cf2-listras)"/>
-          <path d="M46 34 H124 L120 108 H50 Z" fill="url(#cf2-sombra)"/>
-          <path d="M40 30 H130" stroke="url(#cf2-madeira)" stroke-width="9" stroke-linecap="round"/>
-          <!-- assento em perspectiva -->
-          <path d="M50 108 H120 L138 132 H32 Z" fill="url(#cf2-listras)" opacity=".92"/>
-          <path d="M50 108 H120 L138 132 H32 Z" fill="#000" opacity=".1"/>
-          <path d="M30 133 H140" stroke="url(#cf2-madeira)" stroke-width="7" stroke-linecap="round"/>
-          <!-- braços -->
-          <path d="M24 98 H50 M120 98 H146" stroke="url(#cf2-madeira)" stroke-width="7" stroke-linecap="round"/>
-          <path d="M28 100 L32 132 M142 100 L138 132" stroke="#9A7046" stroke-width="5" stroke-linecap="round"/>
-          <!-- pés da frente -->
-          <path d="M33 133 L26 170 M137 133 L144 170" stroke="url(#cf2-madeira)" stroke-width="7" stroke-linecap="round"/>
-        </svg>
-
-        <svg class="cooler" viewBox="0 0 120 100" aria-hidden="true">
-          <defs><linearGradient id="cl-corpo" x1="0" x2="1"><stop offset="0" stop-color="#1F8FB0"/><stop offset=".5" stop-color="#36AECB"/><stop offset="1" stop-color="#1A7C9A"/></linearGradient></defs>
-          <ellipse cx="60" cy="95" rx="54" ry="5" fill="#6E4F2E" opacity=".25"/>
-          <rect x="10" y="34" width="100" height="58" rx="8" fill="url(#cl-corpo)"/>
-          <rect x="10" y="62" width="100" height="6" fill="#fff" opacity=".85"/>
-          <rect x="6" y="22" width="108" height="18" rx="6" fill="#F7F4EE"/>
-          <rect x="6" y="36" width="108" height="4" rx="2" fill="#D9D3C8"/>
-          <path d="M34 22 V12 Q34 6 40 6 H80 Q86 6 86 12 V22" fill="none" stroke="#E7E1D6" stroke-width="6" stroke-linecap="round"/>
-          <rect x="48" y="44" width="24" height="10" rx="3" fill="#fff" opacity=".9"/>
-          <rect x="16" y="40" width="10" height="46" rx="4" fill="#fff" opacity=".18"/>
-        </svg>
-        <div class="praia-texto revelar">
-          <span class="rotulo">Sua próxima temporada</span>
-          <h2>Sua próxima temporada começa com uma mensagem.</h2>
-          <p>Conte as datas e quantas pessoas vêm. Respondemos pelo WhatsApp com a disponibilidade.</p>
-          <a class="pds-botao" href="https://wa.me/5548991451520?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20de%20acomoda%C3%A7%C3%B5es%20e%20gostaria%20de%20consultar%20a%20disponibilidade." target="_blank" rel="noopener"><span>Consultar disponibilidade</span><span aria-hidden="true">→</span></a>
-        </div>
+  <section class="ab-final">
+    <div class="ab-tela">
+      <img src="assets/img/por-do-sol.webp" alt="" loading="lazy">
+      <span class="ab-barra ab-barra--cima" aria-hidden="true"></span>
+      <span class="ab-barra ab-barra--baixo" aria-hidden="true"></span>
+      <div class="ab-convite revelar">
+        <span class="rotulo">Sua próxima temporada</span>
+        <h2>Sua próxima temporada começa com uma mensagem.</h2>
+        <p>Conte as datas e quantas pessoas vêm. Respondemos pelo WhatsApp com a disponibilidade.</p>
+        <a class="pds-botao" href="https://wa.me/5548991451520?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20de%20acomoda%C3%A7%C3%B5es%20e%20gostaria%20de%20consultar%20a%20disponibilidade." target="_blank" rel="noopener"><span>Consultar disponibilidade</span><span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -284,5 +220,6 @@
 <script src="cinema-global.js"></script>
 <script src="cine-vida.js?v=1"></script>
 <script src="acomodacoes.js?v=7"></script>
+<script src="praia-traco.js"></script>
 </body>
 </html>

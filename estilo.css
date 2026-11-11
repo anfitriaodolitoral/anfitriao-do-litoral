@@ -1567,7 +1567,7 @@ body:has(.vitrine-topo) .rodape-painel { background: rgb(255 255 255 / .6); bord
 @media (max-width: 760px) {
   /* Hero curto, cena 2 no alto da tela */
   .inicio .cine { height: 240vh; }
-  .inicio .cena-3 { top: calc(88px + env(safe-area-inset-top, 0px)); bottom: auto; }
+  .inicio .cena-3 { top: auto; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); width: calc(100% - 2 * var(--gutter)); }
   .inicio .cena-1 .apoio { display: none; }
 
   /* Menos texto */

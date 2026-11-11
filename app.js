@@ -154,7 +154,9 @@
   let formNaTela = false; // o botão flutuante se recolhe para não cobrir o "Enviar"
   const aoRolar = () => {
     topo && topo.classList.toggle("rolou", scrollY > 40);
-    whats && whats.classList.toggle("visivel", scrollY > innerHeight * 0.6 && !formNaTela);
+    const cineEl = document.querySelector(".cine");
+    const limite = celular && cineEl ? cineEl.offsetHeight - innerHeight * 0.4 : innerHeight * 0.6; // no celular o botão espera o hero acabar
+    whats && whats.classList.toggle("visivel", scrollY > limite && !formNaTela);
   };
   const formEl = document.querySelector(".form");
   if (formEl) new IntersectionObserver(([e]) => { formNaTela = e.isIntersecting; aoRolar(); }).observe(formEl);

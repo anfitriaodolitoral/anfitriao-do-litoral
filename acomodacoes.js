@@ -32,7 +32,7 @@
   if (cint && !reduzir) {
     for (let i = 0; i < 26; i++) {
       const s = document.createElement("i");
-      s.style.left = (52 + Math.random() * 40).toFixed(1) + "%";
+      s.style.left = (36 + Math.random() * 28).toFixed(1) + "%";
       s.style.top = (Math.random() * 100).toFixed(1) + "%";
       s.style.animationDelay = (Math.random() * 3).toFixed(2) + "s";
       s.style.animationDuration = (1.6 + Math.random() * 2).toFixed(2) + "s";

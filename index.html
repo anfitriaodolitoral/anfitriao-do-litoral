@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/frames/desktop/f_0001.webp">
-  <link rel="stylesheet" href="estilo.css?v=20261111b">
+  <link rel="stylesheet" href="estilo.css?v=20261111c">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,7 +37,7 @@
   }
   </script>
 </head>
-<body>
+<body class="inicio">
 
 <header class="topo">
   <a href="#inicio" class="marca" aria-label="Anfitrião do Litoral, início">
@@ -54,7 +54,7 @@
 
 <main>
 
-  <section id="inicio" class="cine" style="--altura: 440vh">
+  <section id="inicio" class="cine" style="--altura: 380vh">
     <div class="cine-palco">
       <canvas class="cine-canvas" aria-hidden="true"></canvas>
       <div class="cine-vinheta"></div>
@@ -102,8 +102,11 @@
         <span class="rotulo">01 · Nossa história</span>
         <h2>Tudo começou com um apartamento em 2020.</h2>
         <p>Decidimos testar o aluguel por temporada em um apartamento da família que ficaria desocupado. Os resultados foram surpreendentes e nos mostraram o potencial de rentabilidade dessa modalidade, especialmente quando existe uma gestão cuidadosa e profissional.</p>
+        <div class="historia-mais" id="historia-mais"><div>
         <p>Com o tempo, amigos, familiares e outros proprietários passaram a confiar seus imóveis aos nossos cuidados. Essa confiança, construída a partir dos resultados e da atenção dedicada a cada propriedade, fez nosso trabalho crescer e se profissionalizar.</p>
         <p>Assim nasceu o Anfitrião do Litoral, especializado na gestão completa de imóveis para aluguel por temporada em Garopaba e no litoral de Santa Catarina. Cuidamos de todas as etapas da hospedagem, buscando valorizar cada imóvel, preservar o patrimônio dos proprietários e proporcionar bons resultados e tranquilidade.</p>
+        </div></div>
+        <button type="button" class="ler-mais" aria-expanded="false" aria-controls="historia-mais"><span>Ler a história completa</span><i aria-hidden="true">+</i></button>
 
         <ul class="historia-fatos">
           <li>
@@ -334,8 +337,8 @@
 </a>
 
 <script src="config.js?v=2"></script>
-<script src="app.js?v=20261111c"></script>
-<script src="efeitos.js"></script>
+<script src="app.js?v=20261111d"></script>
+<script src="efeitos.js?v=2"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="cinema-global.js"></script>
 </body>

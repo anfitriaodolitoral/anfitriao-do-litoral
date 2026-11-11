@@ -96,3 +96,51 @@
   addEventListener("scroll", () => requestAnimationFrame(atualizar), { passive: true });
   atualizar();
 })();
+
+/* ── Página inicial: carrosséis de deslizar com pontos e "Ler a história" ── */
+(() => {
+  const celular = matchMedia("(max-width: 760px)");
+  document.querySelectorAll(".inicio .cuidados, .inicio .etapas").forEach((trilho) => {
+    const itens = [...trilho.children];
+    const pontos = document.createElement("div");
+    pontos.className = "pontos";
+    pontos.setAttribute("aria-hidden", "true");
+    pontos.innerHTML = itens.map(() => "<i></i>").join("");
+    trilho.after(pontos);
+    const bolas = [...pontos.children];
+    const marcar = () => {
+      const centro = trilho.scrollLeft + trilho.clientWidth / 2;
+      let melhor = 0, dist = Infinity;
+      itens.forEach((el, k) => {
+        const d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - centro);
+        if (d < dist) { dist = d; melhor = k; }
+      });
+      itens.forEach((el, k) => el.classList.toggle("em-foco", k === melhor));
+      bolas.forEach((b, k) => b.classList.toggle("ativo", k === melhor));
+    };
+    trilho.addEventListener("scroll", () => requestAnimationFrame(marcar), { passive: true });
+    addEventListener("resize", marcar);
+    marcar();
+    bolas.forEach((b, k) => b.addEventListener("click", () => {
+      trilho.scrollTo({ left: itens[k].offsetLeft - (trilho.clientWidth - itens[k].offsetWidth) / 2, behavior: "smooth" });
+    }));
+    // Dica de gesto: o trilho "espia" o próximo cartão na primeira vez que aparece
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      new IntersectionObserver(([e], o) => {
+        if (!e.isIntersecting || !celular.matches) return;
+        o.disconnect();
+        setTimeout(() => {
+          trilho.scrollTo({ left: 70, behavior: "smooth" });
+          setTimeout(() => trilho.scrollTo({ left: 0, behavior: "smooth" }), 650);
+        }, 500);
+      }, { threshold: 0.6 }).observe(trilho);
+    }
+  });
+
+  document.querySelectorAll(".ler-mais").forEach((b) => b.addEventListener("click", () => {
+    const alvo = document.getElementById(b.getAttribute("aria-controls"));
+    const aberto = alvo.classList.toggle("aberto");
+    b.setAttribute("aria-expanded", String(aberto));
+    b.querySelector("span").textContent = aberto ? "Mostrar menos" : "Ler a história completa";
+  }));
+})();

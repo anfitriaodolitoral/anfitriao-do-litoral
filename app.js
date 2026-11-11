@@ -120,7 +120,7 @@
 
     const quadro = () => {
       alvo = progresso() * (total - 1);
-      atual += (alvo - atual) * 0.18; // suaviza: sensação de filme, não de slide
+      atual += (alvo - atual) * (celular ? 0.32 : 0.18); // suaviza: sensação de filme, não de slide
       if (Math.abs(alvo - atual) < 0.05) atual = alvo;
       desenhar(Math.round(atual));
       atualizarMomentos(atual / (total - 1));

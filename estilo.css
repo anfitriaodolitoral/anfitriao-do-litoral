@@ -2357,3 +2357,36 @@ body:has(.praia) { background-image: var(--areia-brilho), var(--areia-grao), lin
   .praia-gs { left: -330px; z-index: 1; }
   .cadeira-frente { left: -215px; }
 }
+/* guarda-sol fincado na pontinha do cartão (copa passa por trás) e duas cadeiras */
+@media (min-width: 861px) {
+  .praia-palco { margin-top: 120px; }
+  .praia-gs { left: -210px; width: 420px; bottom: -40px; z-index: 1; }
+  .praia-gs .gs-sombra { left: -40px; width: 380px; }
+  .cadeira-frente { left: -330px; width: 150px; bottom: -26px; }
+  .cadeira-frente--2 { left: -185px; bottom: -34px; width: 150px; }
+}
+@media (max-width: 860px) {
+  .praia-gs { left: -95px; width: 190px; top: -178px; z-index: 1; }
+  .cadeira-frente { left: 18px; top: -104px; width: 88px; z-index: 1; }
+  .cadeira-frente--2 { left: 112px; top: -100px; width: 88px; }
+}
+@media (max-width: 860px) {
+  .praia-gs { left: -70px; width: 200px; top: -186px; }
+  .cadeira-frente { left: 30px; top: -96px; width: 78px; z-index: 2; }
+  .cadeira-frente--2 { left: 104px; top: -92px; width: 78px; }
+  .praia .achado--praia:first-child { left: auto !important; right: 8%; }
+}
+/* guarda-sol inteiro, encostado na pontinha do cartão; cadeiras juntinhas embaixo */
+@media (min-width: 861px) {
+  .praia-gs { left: -372px; width: 380px; bottom: -40px; z-index: 3; }
+  .praia-gs .gs-sombra { left: -10px; width: 380px; }
+  .cadeira-frente { left: -302px; width: 132px; bottom: -28px; z-index: 4; }
+  .cadeira-frente--2 { left: -192px; width: 132px; bottom: -34px; }
+}
+@media (max-width: 860px) {
+  .praia-palco { margin-top: 210px; }
+  .praia-gs { left: 0; width: 180px; top: -206px; z-index: 3; }
+  .praia-gs .gs-sombra { left: 0; width: 180px; }
+  .cadeira-frente { left: 32px; top: -94px; width: 66px; z-index: 4; }
+  .cadeira-frente--2 { left: 88px; top: -90px; width: 66px; }
+}

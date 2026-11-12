@@ -1758,6 +1758,9 @@ body:has(.vitrine-topo) .rodape-painel { background: rgb(255 255 255 / .6); bord
 @keyframes fato-saco-cai { from { transform: translateY(-14px) scale(.6); } to { transform: none; } }
 @keyframes fato-saco-sacode { 0%,100% { rotate: 0deg; } 20% { rotate: -12deg; } 45% { rotate: 10deg; } 70% { rotate: -6deg; } }
 @keyframes fato-saco-balanca { 0%,100% { rotate: 0deg; } 25% { rotate: -5deg; } 75% { rotate: 5deg; } }
+.fato-saco .fato-brilho { transform-box: fill-box; transform-origin: center; opacity: 0; }
+.fatos-anima.vivo .fato-saco .fato-brilho, .fato-saco .fato-brilho { animation: fato-cintila 2.4s ease-in-out 1.2s infinite !important; }
+@keyframes fato-cintila { 0%, 60%, 100% { opacity: 0; transform: scale(.3) rotate(0deg); } 75% { opacity: 1; transform: scale(1.1) rotate(45deg); } }
 @keyframes fato-onda-verde { from { box-shadow: 0 0 0 0 rgb(46 125 82 / .45); } to { box-shadow: 0 0 0 16px rgb(46 125 82 / 0); } }
 
 .fato-balao {

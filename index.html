@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/frames/desktop/f_0001.webp">
-  <link rel="stylesheet" href="estilo.css?v=saco1">
+  <link rel="stylesheet" href="estilo.css?v=saco2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,13 +180,19 @@
           <li class="fato-renda">
             <span class="fato-icone fato-icone--renda" aria-hidden="true">
               <svg class="fato-saco" viewBox="0 0 48 48">
-                <defs><linearGradient id="saco-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6CCB93"/><stop offset="1" stop-color="#2E8B57"/></linearGradient></defs>
-                <ellipse cx="24" cy="45" rx="13" ry="2" fill="#1F5C3B" opacity=".18"/>
-                <path d="M18.5 16.5C10 22 6.5 30 8 36.5 9.5 42.5 15.5 45 24 45s14.5-2.5 16-8.5c1.5-6.5-2-14.5-10.5-20Z" fill="url(#saco-g)" stroke="#1F6B43" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M19 16 15.5 7.5c2.6 1.4 5 1.2 8.5-1.5 3.5 2.7 5.9 2.9 8.5 1.5L29 16Z" fill="#5BBE85" stroke="#1F6B43" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M17.5 16.5h13" stroke="#E0A93B" stroke-width="3.2" stroke-linecap="round"/>
-                <path d="M13 27c1-3 3-5.5 5-7" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".45" fill="none"/>
-                <text x="24" y="36.5" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="11" fill="#fff">R$</text>
+                <defs>
+                  <radialGradient id="saco-corpo" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#86D9A8"/><stop offset=".55" stop-color="#34A065"/><stop offset="1" stop-color="#1C6A43"/></radialGradient>
+                  <linearGradient id="saco-topo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7BD3A0"/><stop offset="1" stop-color="#2F9460"/></linearGradient>
+                  <linearGradient id="saco-ouro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".45" stop-color="#F5C84C"/><stop offset="1" stop-color="#C98E1C"/></linearGradient>
+                </defs>
+                <ellipse cx="24" cy="45.6" rx="12.5" ry="1.8" fill="#1F5C3B" opacity=".16"/>
+                <path d="M19 17.5C11.5 21.5 7 29 7.8 35.5 8.6 41.8 15 45 24 45s15.4-3.2 16.2-9.5C41 29 36.5 21.5 29 17.5Z" fill="url(#saco-corpo)" stroke="#1B5E3C" stroke-width="1.1"/>
+                <path d="M19.5 17C18 13 15.6 10 14.6 7.2c3 1.4 5.4 1.2 7.4-1 1 1.4 3 1.4 4 0 2 2.2 4.4 2.4 7.4 1-1 2.8-3.4 5.8-4.9 9.8Z" fill="url(#saco-topo)" stroke="#1B5E3C" stroke-width="1.1" stroke-linejoin="round"/>
+                <path d="M12.5 30c.6-3.6 2.6-6.8 5.4-8.8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".4"/>
+                <rect x="17.2" y="15.4" width="13.6" height="3.8" rx="1.9" fill="url(#saco-ouro)" stroke="#A8761A" stroke-width=".7"/>
+                <text x="24.6" y="38.6" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="17" fill="#165636" opacity=".55">$</text>
+                <text x="24" y="38" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="17" fill="url(#saco-ouro)" stroke="#A8761A" stroke-width=".5">$</text>
+                <path class="fato-brilho" d="M38 9.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9Z" fill="#F5C84C"/>
               </svg>
               <span class="fato-moedas"></span>
               <span class="fato-balao">Mais rentabilidade!</span>

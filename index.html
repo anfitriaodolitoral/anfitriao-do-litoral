@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/frames/desktop/f_0001.webp">
-  <link rel="stylesheet" href="estilo.css?v=saco2">
+  <link rel="stylesheet" href="estilo.css?v=saco3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -181,18 +181,25 @@
             <span class="fato-icone fato-icone--renda" aria-hidden="true">
               <svg class="fato-saco" viewBox="0 0 48 48">
                 <defs>
-                  <radialGradient id="saco-corpo" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#86D9A8"/><stop offset=".55" stop-color="#34A065"/><stop offset="1" stop-color="#1C6A43"/></radialGradient>
-                  <linearGradient id="saco-topo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7BD3A0"/><stop offset="1" stop-color="#2F9460"/></linearGradient>
-                  <linearGradient id="saco-ouro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".45" stop-color="#F5C84C"/><stop offset="1" stop-color="#C98E1C"/></linearGradient>
+                  <radialGradient id="saco-aura" cx=".5" cy=".55" r=".5"><stop offset="0" stop-color="#FFD873" stop-opacity=".75"/><stop offset="1" stop-color="#FFD873" stop-opacity="0"/></radialGradient>
+                  <radialGradient id="saco-corpo" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#FFF6D2"/><stop offset=".28" stop-color="#FFD96E"/><stop offset=".62" stop-color="#E0A42C"/><stop offset="1" stop-color="#94600F"/></radialGradient>
+                  <linearGradient id="saco-topo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEBA8"/><stop offset="1" stop-color="#D59A26"/></linearGradient>
+                  <linearGradient id="saco-faixa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B07A1C"/><stop offset=".5" stop-color="#7A4F0C"/><stop offset="1" stop-color="#5C3A08"/></linearGradient>
+                  <linearGradient id="saco-luz" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+                  <clipPath id="saco-recorte"><path d="M19 17.5C11.5 21.5 7 29 7.8 35.5 8.6 41.8 15 45 24 45s15.4-3.2 16.2-9.5C41 29 36.5 21.5 29 17.5Z"/></clipPath>
                 </defs>
-                <ellipse cx="24" cy="45.6" rx="12.5" ry="1.8" fill="#1F5C3B" opacity=".16"/>
-                <path d="M19 17.5C11.5 21.5 7 29 7.8 35.5 8.6 41.8 15 45 24 45s15.4-3.2 16.2-9.5C41 29 36.5 21.5 29 17.5Z" fill="url(#saco-corpo)" stroke="#1B5E3C" stroke-width="1.1"/>
-                <path d="M19.5 17C18 13 15.6 10 14.6 7.2c3 1.4 5.4 1.2 7.4-1 1 1.4 3 1.4 4 0 2 2.2 4.4 2.4 7.4 1-1 2.8-3.4 5.8-4.9 9.8Z" fill="url(#saco-topo)" stroke="#1B5E3C" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="M12.5 30c.6-3.6 2.6-6.8 5.4-8.8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".4"/>
-                <rect x="17.2" y="15.4" width="13.6" height="3.8" rx="1.9" fill="url(#saco-ouro)" stroke="#A8761A" stroke-width=".7"/>
-                <text x="24.6" y="38.6" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="17" fill="#165636" opacity=".55">$</text>
-                <text x="24" y="38" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="17" fill="url(#saco-ouro)" stroke="#A8761A" stroke-width=".5">$</text>
-                <path class="fato-brilho" d="M38 9.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9Z" fill="#F5C84C"/>
+                <circle class="fato-aura" cx="24" cy="30" r="22" fill="url(#saco-aura)"/>
+                <ellipse cx="24" cy="45.6" rx="12" ry="1.7" fill="#5C3A08" opacity=".22"/>
+                <path d="M19 17.5C11.5 21.5 7 29 7.8 35.5 8.6 41.8 15 45 24 45s15.4-3.2 16.2-9.5C41 29 36.5 21.5 29 17.5Z" fill="url(#saco-corpo)" stroke="#8A5A10" stroke-width="1"/>
+                <path d="M19.5 17C18 13 15.6 10 14.6 7.2c3 1.4 5.4 1.2 7.4-1 1 1.4 3 1.4 4 0 2 2.2 4.4 2.4 7.4 1-1 2.8-3.4 5.8-4.9 9.8Z" fill="url(#saco-topo)" stroke="#8A5A10" stroke-width="1" stroke-linejoin="round"/>
+                <path d="M12.3 30.5c.6-3.8 2.7-7 5.6-9" stroke="#FFFBEA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".75"/>
+                <rect x="17.2" y="15.4" width="13.6" height="3.8" rx="1.9" fill="url(#saco-faixa)"/>
+                <path d="M18.6 16.3h10.8" stroke="#E9B95A" stroke-width=".7" stroke-linecap="round" opacity=".8"/>
+                <text x="24" y="38.9" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="17" fill="#FFF3C4" opacity=".7">$</text>
+                <text x="24" y="38" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="17" fill="#7A4D0B">$</text>
+                <g clip-path="url(#saco-recorte)"><rect class="fato-luz" x="-6" y="10" width="9" height="40" fill="url(#saco-luz)" transform="skewX(-18)"/></g>
+                <path class="fato-brilho" d="M38 9.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9Z" fill="#FFE08A"/>
+                <path class="fato-brilho fato-brilho--2" d="M9 12l.6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5-1.5-.6 1.5-.6Z" fill="#FFE08A"/>
               </svg>
               <span class="fato-moedas"></span>
               <span class="fato-balao">Mais rentabilidade!</span>

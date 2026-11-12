@@ -1727,7 +1727,7 @@ body:has(.vitrine-topo) .rodape-painel { background: rgb(255 255 255 / .6); bord
 .fato-icone::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 0 rgb(31 78 107 / .35); pointer-events: none; }
 .fato-icone--renda { background: #E3F2E8; }
 .fato-icone--renda::after { box-shadow: 0 0 0 0 rgb(46 125 82 / .4); }
-.inicio .historia-fatos .fato-icone .fato-saco { width: 34px; height: 34px; stroke: none; overflow: visible; transform-origin: 50% 90%; }
+.inicio .historia-fatos .fato-icone .fato-saco { width: 36px; height: 36px; filter: drop-shadow(0 3px 4px rgb(140 90 15 / .3)); stroke: none; overflow: visible; transform-origin: 50% 90%; }
 .fato-renda strong { color: #1F5C3B; }
 
 /* estado inicial (só quando há JS e movimento) */
@@ -1758,6 +1758,13 @@ body:has(.vitrine-topo) .rodape-painel { background: rgb(255 255 255 / .6); bord
 @keyframes fato-saco-cai { from { transform: translateY(-14px) scale(.6); } to { transform: none; } }
 @keyframes fato-saco-sacode { 0%,100% { rotate: 0deg; } 20% { rotate: -12deg; } 45% { rotate: 10deg; } 70% { rotate: -6deg; } }
 @keyframes fato-saco-balanca { 0%,100% { rotate: 0deg; } 25% { rotate: -5deg; } 75% { rotate: 5deg; } }
+.fato-saco .fato-aura { transform-box: fill-box; transform-origin: center; opacity: 0; }
+.fatos-anima.vivo .fato-saco .fato-aura, .fato-saco .fato-aura { animation: fato-aura 3.2s ease-in-out 1s infinite !important; }
+@keyframes fato-aura { 0%, 100% { opacity: .35; transform: scale(.85); } 50% { opacity: .9; transform: scale(1.05); } }
+.fato-saco .fato-luz { transform-box: view-box; }
+.fatos-anima.vivo .fato-saco .fato-luz, .fato-saco .fato-luz { animation: fato-luz 3.6s cubic-bezier(.5,0,.3,1) 1.3s infinite !important; }
+@keyframes fato-luz { 0% { translate: 0 0; } 40%, 100% { translate: 52px 0; } }
+.fatos-anima.vivo .fato-saco .fato-brilho--2, .fato-saco .fato-brilho.fato-brilho--2 { animation-delay: 2.4s !important; }
 .fato-saco .fato-brilho { transform-box: fill-box; transform-origin: center; opacity: 0; }
 .fatos-anima.vivo .fato-saco .fato-brilho, .fato-saco .fato-brilho { animation: fato-cintila 2.4s ease-in-out 1.2s infinite !important; }
 @keyframes fato-cintila { 0%, 60%, 100% { opacity: 0; transform: scale(.3) rotate(0deg); } 75% { opacity: 1; transform: scale(1.1) rotate(45deg); } }

@@ -74,10 +74,10 @@
     if (!alvo || reduzir) return;
     alvo.textContent = "";
     const atraso = (itens.length - 1) * PASSO + 0.5;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 14; i++) {
       const m = document.createElement("span");
       m.className = "fato-moeda";
-      const ang = (-90 + (Math.random() * 150 - 75)) * Math.PI / 180, dist = 34 + Math.random() * 30;
+      const ang = (-90 + (Math.random() * 110 - 55)) * Math.PI / 180, dist = 40 + Math.random() * 34;
       m.style.setProperty("--x", (Math.cos(ang) * dist * 1.4).toFixed(0) + "px");
       m.style.setProperty("--y", (Math.sin(ang) * dist).toFixed(0) + "px");
       m.style.setProperty("--r", (Math.random() * 360 - 180).toFixed(0) + "deg");

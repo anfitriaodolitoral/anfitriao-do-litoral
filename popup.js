@@ -24,19 +24,22 @@
   el.innerHTML =
     '<div class="popup-porque__fundo" data-fechar></div>' +
     '<div class="popup-porque__caixa">' +
-      '<button class="popup-porque__fechar" type="button" aria-label="Fechar" data-fechar>' +
-        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
-      '<img class="popup-porque__logo" src="assets/logo.png" alt="" width="56" height="56">' +
-      '<p class="popup-porque__selo">Reserva direta</p>' +
-      '<h2 id="popup-porque-titulo">Por que reservar com o <em>Anfitrião do Litoral</em>?</h2>' +
-      '<ul class="popup-porque__lista">' +
-        '<li><span class="popup-porque__icone">' + icones.economia + '</span><div><strong>Economize na tarifa</strong><p>Reservando direto, sem taxas extras de plataformas convencionais.</p></div></li>' +
-        '<li><span class="popup-porque__icone">' + icones.suporte + '</span><div><strong>Suporte 24h</strong><p>Do check-in ao check-out, com atendimento humanizado.</p></div></li>' +
-        '<li><span class="popup-porque__icone">' + icones.checkin + '</span><div><strong>Check-in facilitado</strong><p>Um processo simples e sem burocracia.</p></div></li>' +
-      '</ul>' +
-      '<div class="popup-porque__acoes">' +
-        '<a class="botao" href="acomodacoes.html">Ver acomodações</a>' +
-        '<a class="popup-porque__whats" href="https://wa.me/' + whats + '?text=' + msg + '" target="_blank" rel="noopener">Reservar pelo WhatsApp</a>' +
+      '<div class="popup-porque__capa">' +
+        '<button class="popup-porque__fechar" type="button" aria-label="Fechar" data-fechar>' +
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
+        '<span class="popup-porque__selo">Reserva direta</span>' +
+      '</div>' +
+      '<div class="popup-porque__corpo">' +
+        '<h2 id="popup-porque-titulo">Por que reservar com o <em>Anfitrião do Litoral</em>?</h2>' +
+        '<ul class="popup-porque__lista">' +
+          '<li><span class="popup-porque__icone">' + icones.economia + '</span><p><strong>Economize na tarifa.</strong> Reserve direto, sem taxas extras de plataformas.</p></li>' +
+          '<li><span class="popup-porque__icone">' + icones.suporte + '</span><p><strong>Suporte 24h</strong> do check-in ao check-out, com atendimento humanizado.</p></li>' +
+          '<li><span class="popup-porque__icone">' + icones.checkin + '</span><p><strong>Check-in facilitado,</strong> simples e sem burocracia.</p></li>' +
+        '</ul>' +
+        '<div class="popup-porque__acoes">' +
+          '<a class="popup-porque__botao" href="acomodacoes.html">Ver acomodações</a>' +
+          '<a class="popup-porque__whats" href="https://wa.me/' + whats + '?text=' + msg + '" target="_blank" rel="noopener">ou reserve pelo WhatsApp</a>' +
+        '</div>' +
       '</div>' +
     '</div>';
 

@@ -10,7 +10,7 @@
   const PASSO = 0.42; // segundos entre um ícone e outro (igual ao CSS)
 
   itens.forEach((li, i) => li.style.setProperty("--i", i));
-  lista.querySelectorAll(".fato-icone:not(.fato-icone--renda) path").forEach((p) => p.setAttribute("pathLength", "1"));
+  lista.querySelectorAll(".fato-icone path").forEach((p) => p.setAttribute("pathLength", "1"));
   if (!reduzir) lista.classList.add("fatos-anima");
 
   /* ── Som ── */
